@@ -28,6 +28,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	margin:0 300px;
+	@media (max-width: 1280px) { 
+		margin:0 100px;
+	}
 }
 ol, ul {
 	list-style: none;
