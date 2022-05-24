@@ -1,7 +1,12 @@
 // import React from 'react';
+import GlobalStyle from './styles/GlobalStyle';
 
 function App() {
-  return <>dd</>;
+  return (
+    <>
+      <GlobalStyle />
+    </>
+  );
 }
 
 export default App;
