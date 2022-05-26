@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalStyle from './styles/GlobalStyle';
-import { Header, About } from './components/index';
+import { Header, About, Projects } from './components/index';
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <About />
+      <Projects />
     </>
   );
 }
