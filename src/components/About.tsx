@@ -5,7 +5,7 @@ import aboutImgae from '../assets/image/mainimage.jpg';
 
 const About = () => {
   return (
-    <AboutContainer>
+    <AboutContainer className='about'>
       <Image
         isCircle={true}
         width='320px'

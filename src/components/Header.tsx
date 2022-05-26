@@ -5,7 +5,7 @@ import { FaRegMoon } from 'react-icons/fa';
 
 const Header = () => {
   return (
-    <HeaderContainer>
+    <HeaderContainer className='header'>
       <Navigation>
         <NavItemContainer>
           <NavItem url={gitIcon}></NavItem>
