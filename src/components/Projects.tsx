@@ -143,6 +143,7 @@ const ProjectsContainer = styled.section`
   width: 100%;
   height: 100%;
   padding: 64px;
+  margin: 115px 0px;
 `;
 
 const StyledSlider = styled(Slider)`

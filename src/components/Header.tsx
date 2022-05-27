@@ -23,6 +23,12 @@ export default Header;
 const HeaderContainer = styled.header`
   width: 100%;
   padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: '1px solid black';
+  background-color: #fff;
+  box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
 `;
 
 const Navigation = styled.nav`
@@ -33,6 +39,7 @@ const Navigation = styled.nav`
 
 const NavItemContainer = styled.ul`
   display: flex;
+  margin-right: 300px;
 `;
 
 const NavItem = styled.li<{ url?: string }>`
