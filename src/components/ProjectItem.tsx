@@ -67,7 +67,7 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
         <StyledImageSlider {...settings}>
           {imageUrl.map((image: string, index) => (
             <Image
-              isCircle={false}
+              isCircle=''
               width='100%'
               height='600px'
               url={image}
@@ -105,10 +105,10 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
         </div>
         <div className='textcontainer_body_footer'>
           <a href={youtubeUrl} className='footer_video'>
-            <Image isCircle={true} url={video} width='40px' height='40px' />
+            <Image isCircle='true' url={video} width='40px' height='40px' />
           </a>
           <a href={githubUrl} className='footer_github'>
-            <Image isCircle={true} url={github} width='40px' height='40px' />
+            <Image isCircle='true' url={github} width='40px' height='40px' />
           </a>
         </div>
       </TextContainer>

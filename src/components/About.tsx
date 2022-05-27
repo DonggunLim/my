@@ -7,7 +7,7 @@ const About = () => {
   return (
     <AboutContainer className='about'>
       <Image
-        isCircle={true}
+        isCircle='true'
         width='320px'
         height='320px'
         url={aboutImgae}
@@ -23,6 +23,6 @@ const AboutContainer = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justfy-contents: center;
-  align-items: center;
+  // align-items: center;
+  margin: 85px 0;
 `;
