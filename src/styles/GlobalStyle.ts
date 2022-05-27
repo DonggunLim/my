@@ -20,6 +20,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	line-height: normal;
 }
 
 article, aside, details, figcaption, figure, 
@@ -28,7 +29,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	margin:0 300px;
+	width:1290px;
+	min-height: 100%;
+	justify-contents:center;
+	margin:auto;
+	// background:#1c1c1f;
 	@media (max-width: 1280px) { 
 		margin:0 100px;
 	}
@@ -52,5 +57,6 @@ table {
     outline:0;
     box-sizing:border-box;
 }
+
 
 `;
