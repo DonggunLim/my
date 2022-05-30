@@ -1,17 +1,20 @@
 import React from 'react';
 import GlobalStyle from './styles/GlobalStyle';
 import styled from 'styled-components';
-import { Header, About, Projects, Skill } from './components/index';
+import { Header, About, Projects, Skill, Footer } from './components/index';
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Header />
-      <BackgroundLine className='line' color='#ECE5C7'></BackgroundLine>
-      <About />
-      <Skill />
-      <Projects />
+      <Main>
+        <BackgroundLine className='line' color='#ECE5C7'></BackgroundLine>
+        <About />
+        <Skill />
+        <Projects />
+      </Main>
+      <Footer />
     </>
   );
 }
@@ -26,4 +29,10 @@ const BackgroundLine = styled.div`
   left: -17px;
   top: 230px;
   z-index: -100;
+`;
+
+const Main = styled.main`
+  width: 1290px;
+  min-height: 100%;
+  margin: auto;
 `;
