@@ -20,7 +20,7 @@ import {
 import { detail, post } from '../assets/image/lost99';
 import { login, signup } from '../assets/image/velog';
 
-const Projects = () => {
+const Projects = React.forwardRef((props, ref) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -84,7 +84,12 @@ const Projects = () => {
     },
   ];
   return (
-    <ProjectsContainer className='projects'>
+    <ProjectsContainer
+      className='projects'
+      ref={node => {
+        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[2] = node!;
+      }}
+    >
       <StyledSlider {...settings}>
         {data.map(data => (
           <ProjectItem data={data} key={data.id} />
@@ -92,7 +97,7 @@ const Projects = () => {
       </StyledSlider>
     </ProjectsContainer>
   );
-};
+});
 
 export default Projects;
 

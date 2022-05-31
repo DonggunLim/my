@@ -1,11 +1,18 @@
+import React from 'react';
 import styled from 'styled-components';
 import Image from './Image';
 import group1 from '../assets/image/Group1.png';
 import group2 from '../assets/image/Group2.png';
 import group3 from '../assets/image/Group3.png';
-const Skill = () => {
+
+const Skill = React.forwardRef((props, ref) => {
   return (
-    <SkillContainer className='skill'>
+    <SkillContainer
+      className='skill'
+      ref={node => {
+        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[1] = node!;
+      }}
+    >
       <BackgroundLine className='line' color='#C2DED1' />
       <h1 className='skill_title'>Skill</h1>
       <SkillBody className='skill_body'>
@@ -33,7 +40,7 @@ const Skill = () => {
       </SkillBody>
     </SkillContainer>
   );
-};
+});
 
 export default Skill;
 

@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import GlobalStyle from './styles/GlobalStyle';
 import styled from 'styled-components';
 import { Header, About, Projects, Skill, Footer } from './components/index';
 
 function App() {
+  const scrollRef = useRef<HTMLElement[] | null>([]);
+
   return (
     <>
       <GlobalStyle />
-      <Header />
+      <Header scrollRef={scrollRef} />
       <Main>
         <BackgroundLine className='line' color='#ECE5C7'></BackgroundLine>
-        <About />
-        <Skill />
-        <Projects />
+        <About ref={scrollRef} />
+        <Skill ref={scrollRef} />
+        <Projects ref={scrollRef} />
       </Main>
       <Footer />
     </>
