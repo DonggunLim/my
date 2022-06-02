@@ -13,7 +13,7 @@ const Skill = React.forwardRef((props, ref) => {
         (ref! as React.MutableRefObject<Array<HTMLElement>>).current[1] = node!;
       }}
     >
-      <BackgroundLine className='line' color='#C2DED1' />
+      {/* <BackgroundLine className='line' color='#C2DED1' /> */}
       <h1 className='skill_title'>Skill</h1>
       <SkillBody className='skill_body'>
         <Image

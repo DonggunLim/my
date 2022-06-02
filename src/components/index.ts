@@ -6,7 +6,7 @@ import Projects from './Projects';
 import ProjectItem from './ProjectItem';
 import Skill from './Skill';
 import Footer from './Footer';
-
+import Intro from './Intro';
 export {
   Header,
   Image,
@@ -16,4 +16,5 @@ export {
   ProjectItem,
   Skill,
   Footer,
+  Intro,
 };

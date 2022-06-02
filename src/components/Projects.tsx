@@ -90,6 +90,7 @@ const Projects = React.forwardRef((props, ref) => {
         (ref! as React.MutableRefObject<Array<HTMLElement>>).current[2] = node!;
       }}
     >
+      <h1 className='projects_title'>Project</h1>
       <StyledSlider {...settings}>
         {data.map(data => (
           <ProjectItem data={data} key={data.id} />
@@ -147,13 +148,18 @@ function ProjectPrevArrow(props: any) {
 const ProjectsContainer = styled.section`
   width: 100%;
   height: 100%;
-  padding: 64px;
+  padding: 16px;
   margin: 115px 0px;
+  .projects_title {
+    font-size: 5rem;
+    font-family: 'BlackHanSans-Regular';
+  }
 `;
 
 const StyledSlider = styled(Slider)`
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 12px;
+  margin-top: 16px;
 
   .slick-prev:before {
     display: none;

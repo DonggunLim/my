@@ -29,9 +29,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	// justify-contents:center;
-	// margin:auto;
-	// background:#1c1c1f;
 	@media (max-width: 1280px) { 
 		margin:0 100px;
 	}
