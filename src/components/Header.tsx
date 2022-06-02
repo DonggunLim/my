@@ -29,7 +29,7 @@ const Header = ({ scrollRef }: HeaderProps) => {
     }
     elementList[target].scrollIntoView({
       behavior: 'smooth',
-      block: 'center',
+      block: 'start',
     });
   };
 

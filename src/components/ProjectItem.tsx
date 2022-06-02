@@ -51,14 +51,13 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
   };
 
   const settings = {
-    dots: false,
     infinite: true,
-    speed: 1,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <ProjectItemNextArrow Increase={Increase} />,
     prevArrow: <ProjectItemPrevArrow decrease={decrease} />,
-    draggable: false,
+    draggable: true,
   };
 
   return (
@@ -188,7 +187,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 60%;
-  padding: 44px;
+  padding: 16px;
 
   .textcontainer_title {
     font-weight: 700;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface ImageProps {
   isCircle: string;
@@ -8,10 +8,11 @@ interface ImageProps {
   url?: string;
   bgColor?: string;
   bgSize?: string;
+  hover?: boolean;
 }
 
 const Image = (props: ImageProps) => {
-  const { isCircle, width, height, url, bgColor, bgSize } = props;
+  const { isCircle, width, height, url, bgColor, bgSize, hover } = props;
 
   return (
     <ImageContainer
@@ -21,6 +22,7 @@ const Image = (props: ImageProps) => {
       url={url}
       bgColor={bgColor}
       bgSize={bgSize}
+      hover={hover}
     ></ImageContainer>
   );
 };
@@ -45,8 +47,13 @@ const ImageContainer = styled.div<ImageProps>`
   justify-content: center;
   align-items: center;
 
-  transition: all 0.3s linear;
-  &:hover {
-    transform: scale(1.1);
-  }
+  ${props =>
+    props.hover
+      ? css`
+          transition: all 0.3s linear;
+          &:hover {
+            transform: scale(1.1);
+          }
+        `
+      : ''}
 `;

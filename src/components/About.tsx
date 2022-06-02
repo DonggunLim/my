@@ -28,6 +28,6 @@ const AboutContainer = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  margin: 85px 0;
+  padding: 88px 32px;
+  // margin: 85px 0;
 `;

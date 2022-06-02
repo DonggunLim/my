@@ -32,7 +32,7 @@ export default App;
 
 const Main = styled.main`
   width: 1290px;
-  min-height: 100%;
+  // min-height: 100%;
   margin: auto;
   padding-top: 100px;
 `;

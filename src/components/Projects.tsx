@@ -21,16 +21,6 @@ import { detail, post } from '../assets/image/lost99';
 import { login, signup } from '../assets/image/velog';
 
 const Projects = React.forwardRef((props, ref) => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <ProjectNextArrow />,
-    prevArrow: <ProjectPrevArrow />,
-  };
-
   const data = [
     {
       id: 1,
@@ -91,80 +81,22 @@ const Projects = React.forwardRef((props, ref) => {
       }}
     >
       <h1 className='projects_title'>Project</h1>
-      <StyledSlider {...settings}>
-        {data.map(data => (
-          <ProjectItem data={data} key={data.id} />
-        ))}
-      </StyledSlider>
+      {data.map(data => (
+        <ProjectItem data={data} key={data.id} />
+      ))}
     </ProjectsContainer>
   );
 });
 
 export default Projects;
 
-function ProjectNextArrow(props: any) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        background: 'white',
-        backgroundImage: `url(${rightArrow})`,
-        width: '45px',
-        height: '45px',
-        right: '-65px',
-      }}
-      onClick={() => {
-        onClick();
-        console.log('projectSlider');
-      }}
-    />
-  );
-}
-
-function ProjectPrevArrow(props: any) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: 'block',
-        background: 'white',
-        backgroundImage: `url(${leftArrow})`,
-        width: '45px',
-        height: '45px',
-        left: '-65px',
-      }}
-      onClick={() => {
-        onClick();
-        console.log('projectSlider');
-      }}
-    />
-  );
-}
-
 const ProjectsContainer = styled.section`
   width: 100%;
   height: 100%;
-  padding: 16px;
+  padding: 88px 32px;
   margin: 115px 0px;
   .projects_title {
     font-size: 5rem;
     font-family: 'BlackHanSans-Regular';
-  }
-`;
-
-const StyledSlider = styled(Slider)`
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  border-radius: 12px;
-  margin-top: 16px;
-
-  .slick-prev:before {
-    display: none;
-  }
-  .slick-next:before {
-    display: none;
   }
 `;
