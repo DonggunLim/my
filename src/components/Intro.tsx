@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useEffect, useState } from "react";
+import styled, { css } from "styled-components";
 
 const Intro = () => {
   const [textCount, setTextCount] = useState(0);
 
   const convertedText = [
-    `부족한 부분은 채워가며, 아쉬운 부분은 다듬어가는 `,
-    '노력과 결과를 보여줄 수있는 ',
-    '더 좋은 코드에 대해 고민하는 ',
+    `\n 부족한 부분은 채워가며, 아쉬운 부분은 다듬어가는 `,
+    "\n 노력과 결과를 보여줄 수있는 ",
+    "\n 더 좋은 코드에 대해 고민하는 ",
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTextCount(count => (count + 1) % convertedText.length);
+      setTextCount((count) => (count + 1) % convertedText.length);
     }, 6000);
 
     return () => {
@@ -23,11 +23,11 @@ const Intro = () => {
   return (
     <>
       <IntroContainer>
+        <h3>안녕하세요. 프론트 엔드 개발자 임동건입니다.</h3>
         <h3>
-          안녕하세요. 프론트 엔드 개발자 임동건입니다.
           {convertedText.map((text, index) => (
             <ConvertedText
-              state={index === textCount ? 'active' : 'hide'}
+              state={index === textCount ? "active" : "hide"}
               key={index}
             >
               {text}
@@ -71,9 +71,10 @@ const ConvertedText = styled.h3<{ state: string }>`
   text-align: center;
   font-size: 2.4rem;
   animation: fadein 5s ease-in-out;
+  white-space: pre-line;
 
-  ${props =>
-    props.state === 'active'
+  ${(props) =>
+    props.state === "active"
       ? css`
           display: inline-block;
           @keyframes fadein{
