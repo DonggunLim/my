@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import GlobalStyle from './styles/GlobalStyle';
-import styled from 'styled-components';
+import React, { useRef, useEffect } from "react";
+import GlobalStyle from "./styles/GlobalStyle";
+import styled from "styled-components";
 import {
   Header,
   About,
@@ -8,10 +8,18 @@ import {
   Skill,
   Footer,
   Intro,
-} from './components/index';
+} from "./components/index";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const scrollRef = useRef<HTMLElement[] | null>([]);
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+    AOS.refresh();
+  }, []);
 
   return (
     <>
@@ -19,9 +27,15 @@ function App() {
       <Header scrollRef={scrollRef} />
       <Main>
         <Intro />
-        <About ref={scrollRef} />
-        <Skill ref={scrollRef} />
-        <Projects ref={scrollRef} />
+        <div data-aos="fade-right" data-aos-offset="300">
+          <About ref={scrollRef} />
+        </div>
+        <div data-aos="fade-left" data-aos-offset="400">
+          <Skill ref={scrollRef} />
+        </div>
+        <div data-aos="fade-right" data-aos-offset="500">
+          <Projects ref={scrollRef} />
+        </div>
       </Main>
       <Footer />
     </>
