@@ -72,7 +72,7 @@ const IntroContainer = styled.section`
   }
 `;
 
-const ConvertedText = styled.h3<{ state: string }>`
+const ConvertedText = styled.p<{ state: string }>`
   font-family: NotoSansKR-Regular;
   text-align: center;
   font-size: 2.4rem;
