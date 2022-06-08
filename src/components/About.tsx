@@ -8,7 +8,7 @@ const About = React.forwardRef((props, ref) => {
     <AboutContainer
       className='about'
       ref={node => {
-        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[0] = node!;
+        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[1] = node!;
       }}
     >
       <Image

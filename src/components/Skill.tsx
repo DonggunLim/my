@@ -10,7 +10,7 @@ const Skill = React.forwardRef((props, ref) => {
     <SkillContainer
       className='skill'
       ref={node => {
-        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[1] = node!;
+        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[2] = node!;
       }}
     >
       {/* <BackgroundLine className='line' color='#C2DED1' /> */}

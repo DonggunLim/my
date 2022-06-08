@@ -13,23 +13,27 @@ const Header = ({ scrollRef }: HeaderProps) => {
       e.target! as HTMLElement
     ).innerText;
     const elementList = scrollRef.current as Array<HTMLElement>;
+    console.log(elementList);
     let target: number | null = null;
     switch (clickElementName) {
-      case 'About':
+      case `Donggun's Portfolio`:
         target = 0;
         break;
-      case 'Skill':
+      case 'About':
         target = 1;
         break;
-      case 'Project':
+      case 'Skill':
         target = 2;
+        break;
+      case 'Project':
+        target = 3;
         break;
       default:
         throw new Error(`${clickElementName} is not case`);
     }
     elementList[target].scrollIntoView({
       behavior: 'smooth',
-      block: 'start',
+      block: target === 3 ? 'start' : 'center',
     });
   };
 
@@ -37,6 +41,7 @@ const Header = ({ scrollRef }: HeaderProps) => {
     <HeaderContainer className='header'>
       <Navigation>
         <NavItemContainer>
+          <NavItem onClick={HandleClick}>Donggun's Portfolio</NavItem>
           <NavItem onClick={HandleClick}>About</NavItem>
           <NavItem onClick={HandleClick}>Skill</NavItem>
           <NavItem onClick={HandleClick}>Project</NavItem>

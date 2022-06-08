@@ -77,7 +77,7 @@ const Projects = React.forwardRef((props, ref) => {
     <ProjectsContainer
       className='projects'
       ref={node => {
-        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[2] = node!;
+        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[3] = node!;
       }}
     >
       <h1 className='projects_title'>Project</h1>
