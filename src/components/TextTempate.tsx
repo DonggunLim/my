@@ -22,6 +22,7 @@ const TextTemplate = () => {
             width='40px'
             height='40px'
             bgSize='none'
+            bgColor='#fff'
           />
           <div className='item_contents'>
             <h3>이메일</h3>
@@ -29,7 +30,13 @@ const TextTemplate = () => {
           </div>
         </div>
         <div className='item'>
-          <Image isCircle='true' url={brithIcon} width='40px' height='40px' />
+          <Image
+            isCircle='true'
+            url={brithIcon}
+            width='40px'
+            height='40px'
+            bgColor='#fff'
+          />
           <div className='item_contents'>
             <h3>생년월일</h3>
             <p className='age'>1996 05 31</p>
@@ -42,6 +49,7 @@ const TextTemplate = () => {
             width='40px'
             height='40px'
             bgSize='none'
+            bgColor='#fff'
           />
           <div className='item_contents'>
             <h3>연락처</h3>
@@ -55,6 +63,7 @@ const TextTemplate = () => {
             width='40px'
             height='40px'
             bgSize='none'
+            bgColor='#fff'
           />
           <div className='item_contents'>
             <h3>학력/수료</h3>
@@ -66,7 +75,13 @@ const TextTemplate = () => {
           </div>
         </div>
         <div className='item'>
-          <Image isCircle='true' url={penIcon} width='40px' height='40px' />
+          <Image
+            isCircle='true'
+            url={penIcon}
+            width='40px'
+            height='40px'
+            bgColor='#fff'
+          />
           <div className='item_contents'>
             <h3>자격증</h3>
             <p className='age'>토익 855점</p>

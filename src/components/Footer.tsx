@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from './Image';
+
 const Footer = () => {
   return (
     <FooterContainer>
-      {/* <Image /> */}
       <FooterTop>
         <h1>Contact</h1>
         <div className='contact_body'>
@@ -39,7 +38,8 @@ const FooterContainer = styled.footer`
 const FooterTop = styled.div`
   width: 100%;
   height: 70%;
-  background-color: #fff;
+  background-color: ${props => props.theme.bgColor};
+  color: ${props => props.theme.color};
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import gitIcon from '../assets/image/github_git_icon.png';
-import { FaRegMoon } from 'react-icons/fa';
-
+import { FaRegMoon, FaGithub } from 'react-icons/fa';
+import { BsSun } from 'react-icons/bs';
 interface HeaderProps {
   scrollRef: React.MutableRefObject<object | null>;
+  toggleMode: () => void;
+  isDarkmode: boolean;
 }
 
-const Header = ({ scrollRef }: HeaderProps) => {
+const Header = ({ scrollRef, toggleMode, isDarkmode }: HeaderProps) => {
   const HandleClick = (e: React.MouseEvent) => {
     const clickElementName: 'About' | 'Skill' | 'Project' | string = (
       e.target! as HTMLElement
@@ -46,9 +48,11 @@ const Header = ({ scrollRef }: HeaderProps) => {
           <NavItem onClick={HandleClick}>Skill</NavItem>
           <NavItem onClick={HandleClick}>Project</NavItem>
         </NavItemContainer>
-        <NavItem url={gitIcon}></NavItem>
-        <NavItem>
-          <FaRegMoon size='37' />
+        <NavItem url={gitIcon} className='gitIcon'>
+          <FaGithub size='37' />
+        </NavItem>
+        <NavItem className='toggle_mode' onClick={toggleMode}>
+          {isDarkmode ? <BsSun size='37' /> : <FaRegMoon size='37' />}
         </NavItem>
       </Navigation>
     </HeaderContainer>
@@ -63,9 +67,10 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #354259;
   box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
   z-index: 1000;
+  color: #fff;
 `;
 
 const Navigation = styled.nav`
@@ -91,10 +96,10 @@ const NavItem = styled.li<{ url?: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.3;
+  opacity: 1;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.5;
     transform: translate(0, 8px);
   }
 `;

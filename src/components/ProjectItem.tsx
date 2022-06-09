@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState, useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Image } from './index';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import rightArrow from '../assets/image/rightArrow.png';
-import leftArrow from '../assets/image/leftArrow.png';
 import video from '../assets/image/video.png';
 import github from '../assets/image/github_git_icon.png';
 import '../styles/fonts/font.css';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 interface ProjectItemProps {
   title: string;
@@ -23,6 +22,7 @@ interface ProjectItemProps {
 }
 
 const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
+  const themeContext = useContext(ThemeContext);
   const {
     title,
     explain,
@@ -55,8 +55,12 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <ProjectItemNextArrow Increase={Increase} />,
-    prevArrow: <ProjectItemPrevArrow decrease={decrease} />,
+    nextArrow: (
+      <ProjectItemNextArrow Increase={Increase} themeContext={themeContext} />
+    ),
+    prevArrow: (
+      <ProjectItemPrevArrow decrease={decrease} themeContext={themeContext} />
+    ),
     draggable: true,
   };
 
@@ -104,10 +108,22 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
         </div>
         <div className='textcontainer_body_footer'>
           <a href={youtubeUrl} className='footer_video'>
-            <Image isCircle='true' url={video} width='40px' height='40px' />
+            <Image
+              isCircle='true'
+              url={video}
+              width='40px'
+              height='40px'
+              bgColor='#fff'
+            />
           </a>
           <a href={githubUrl} className='footer_github'>
-            <Image isCircle='true' url={github} width='40px' height='40px' />
+            <Image
+              isCircle='true'
+              url={github}
+              width='40px'
+              height='40px'
+              bgColor='#fff'
+            />
           </a>
         </div>
       </TextContainer>
@@ -118,48 +134,49 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
 export default ProjectItem;
 
 function ProjectItemNextArrow(props: any) {
-  const { className, style, onClick, Increase } = props;
-
+  const { className, style, onClick, Increase, themeContext } = props;
+  console.log(props);
   return (
-    <div
+    <FaArrowRight
       className={className}
       style={{
+        color: themeContext.color,
+        width: '32px',
+        height: '32px',
+        zIndex: 10,
+        position: 'absolute',
+        top: '105%',
+        right: '25%',
         ...style,
-        background: 'white',
-        backgroundImage: `url(${rightArrow})`,
-        backgroundSize: 'contain',
-        width: '22px',
-        height: '22px',
       }}
       onClick={e => {
         e.stopPropagation();
         onClick();
         Increase();
-        console.log('itemslider');
       }}
     />
   );
 }
 
 function ProjectItemPrevArrow(props: any) {
-  const { className, style, onClick, decrease } = props;
+  const { className, style, onClick, decrease, themeContext } = props;
   return (
-    <div
+    <FaArrowLeft
       className={className}
       style={{
+        color: themeContext.color,
+        width: '32px',
+        height: '32px',
+        zIndex: 10,
+        position: 'absolute',
+        top: '105%',
+        left: '25%',
         ...style,
-        display: 'block',
-        background: 'white',
-        backgroundImage: `url(${leftArrow})`,
-        backgroundSize: 'contain',
-        width: '22px',
-        height: '22px',
       }}
       onClick={e => {
         e.stopPropagation();
         onClick();
         decrease();
-        console.log('itemslider');
       }}
     />
   );
