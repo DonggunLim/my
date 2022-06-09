@@ -49,7 +49,15 @@ const Header = ({ scrollRef, toggleMode, isDarkmode }: HeaderProps) => {
           <NavItem onClick={HandleClick}>Project</NavItem>
         </NavItemContainer>
         <NavItem url={gitIcon} className='gitIcon'>
-          <FaGithub size='37' />
+          <a
+            href='https://github.com/Ldonggun'
+            target='_blank'
+            rel='noreferrer'
+            title='github link'
+            style={{ color: '#fff' }}
+          >
+            <FaGithub size='37' />
+          </a>
         </NavItem>
         <NavItem className='toggle_mode' onClick={toggleMode}>
           {isDarkmode ? <BsSun size='37' /> : <FaRegMoon size='37' />}

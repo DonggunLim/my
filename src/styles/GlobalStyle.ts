@@ -52,6 +52,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+a {
+	color: ${props => props.theme.color};
+	text-decoration: none; 
+}
+
 *{
     outline:0;
     box-sizing:border-box;
