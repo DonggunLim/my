@@ -135,7 +135,7 @@ export default ProjectItem;
 
 function ProjectItemNextArrow(props: any) {
   const { className, style, onClick, Increase, themeContext } = props;
-  console.log(props);
+
   return (
     <FaArrowRight
       className={className}

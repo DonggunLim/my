@@ -3,13 +3,21 @@ import styled from 'styled-components';
 import gitIcon from '../assets/image/github_git_icon.png';
 import { FaRegMoon, FaGithub } from 'react-icons/fa';
 import { BsSun } from 'react-icons/bs';
+import { AiOutlineMail } from 'react-icons/ai';
+
 interface HeaderProps {
   scrollRef: React.MutableRefObject<object | null>;
   toggleMode: () => void;
   isDarkmode: boolean;
+  handleModal: () => void;
 }
 
-const Header = ({ scrollRef, toggleMode, isDarkmode }: HeaderProps) => {
+const Header = ({
+  scrollRef,
+  toggleMode,
+  isDarkmode,
+  handleModal,
+}: HeaderProps) => {
   const HandleClick = (e: React.MouseEvent) => {
     const clickElementName: 'About' | 'Skill' | 'Project' | string = (
       e.target! as HTMLElement
@@ -48,7 +56,10 @@ const Header = ({ scrollRef, toggleMode, isDarkmode }: HeaderProps) => {
           <NavItem onClick={HandleClick}>Skill</NavItem>
           <NavItem onClick={HandleClick}>Project</NavItem>
         </NavItemContainer>
-        <NavItem url={gitIcon} className='gitIcon'>
+        <NavItem className='email_icon' onClick={handleModal}>
+          <AiOutlineMail size='43' />
+        </NavItem>
+        <NavItem url={gitIcon} className='git_icon'>
           <a
             href='https://github.com/Ldonggun'
             target='_blank'

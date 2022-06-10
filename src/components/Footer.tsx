@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { AiOutlineMail } from 'react-icons/ai';
 
-const Footer = () => {
+interface FooterProps {
+  handleModal: () => void;
+}
+
+const Footer = (props: FooterProps) => {
+  const { handleModal } = props;
   return (
     <FooterContainer>
       <FooterTop>
@@ -9,6 +15,9 @@ const Footer = () => {
         <div className='contact_body'>
           <p>개인번호 : 01086506766</p>
           <p>이메일 : ehdrjs130@gmail.com</p>
+        </div>
+        <div className='email_icon' onClick={handleModal}>
+          <AiOutlineMail size='38px' />
         </div>
       </FooterTop>
       <FooterLower>
@@ -52,10 +61,15 @@ const FooterTop = styled.div`
     margin-left: 32px;
     border-left: 1px solid #000000;
     padding-left: 32px;
+    padding-right: 32px;
     font-size: 1.1rem;
     font-weight: 400;
     font-family: Noto Sans KR, sans-serif;
     line-height: normal;
+  }
+
+  .email_icon {
+    cursor: pointer;
   }
 `;
 

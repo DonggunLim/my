@@ -8,6 +8,7 @@ import {
   Skill,
   Footer,
   Intro,
+  Modal,
 } from './components/index';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -16,7 +17,7 @@ import { darkTheme, lightTheme } from './styles/theme';
 function App() {
   const scrollRef = useRef<HTMLElement[] | null>([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [modalVisible, setModalVisible] = useState(false);
   const toggleMode = () => {
     setIsDarkMode(prev => {
       isDarkMode
@@ -25,6 +26,8 @@ function App() {
       return !prev;
     });
   };
+
+  const handleModal = () => setModalVisible(!modalVisible);
 
   useEffect(() => {
     AOS.init({
@@ -46,6 +49,7 @@ function App() {
           scrollRef={scrollRef}
           toggleMode={toggleMode}
           isDarkmode={isDarkMode}
+          handleModal={handleModal}
         />
         <Main>
           <Intro ref={scrollRef} />
@@ -59,7 +63,8 @@ function App() {
             <Projects ref={scrollRef} />
           </div>
         </Main>
-        <Footer />
+        <Footer handleModal={handleModal} />
+        <Modal modalVisible={modalVisible} handleModal={handleModal} />
       </ThemeProvider>
     </>
   );
