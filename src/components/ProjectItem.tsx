@@ -37,32 +37,13 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
     readmeUrl,
   } = data;
 
-  const TOTAL_IMAGE_COUNT = imageUrl.length;
-  const [currentImageCount, setCurrentImageCount] = useState(1);
-
-  const Increase = () => {
-    currentImageCount >= TOTAL_IMAGE_COUNT
-      ? setCurrentImageCount(1)
-      : setCurrentImageCount(currentImageCount + 1);
-  };
-
-  const decrease = () => {
-    currentImageCount === 1
-      ? setCurrentImageCount(TOTAL_IMAGE_COUNT)
-      : setCurrentImageCount(currentImageCount - 1);
-  };
-
   const settings = {
     infinite: true,
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: (
-      <ProjectItemNextArrow Increase={Increase} themeContext={themeContext} />
-    ),
-    prevArrow: (
-      <ProjectItemPrevArrow decrease={decrease} themeContext={themeContext} />
-    ),
+    nextArrow: <ProjectItemNextArrow themeContext={themeContext} />,
+    prevArrow: <ProjectItemPrevArrow themeContext={themeContext} />,
     draggable: true,
   };
 
@@ -81,9 +62,9 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
             />
           ))}
         </StyledImageSlider>
-        <div className='item_silder_container_index'>
+        {/* <div className='item_silder_container_index'>
           {currentImageCount}/{TOTAL_IMAGE_COUNT}
-        </div>
+        </div> */}
       </SilderContainer>
       <TextContainer className='item_text_container'>
         <h1 className='textcontainer_title'>{title}</h1>
@@ -158,26 +139,33 @@ export default ProjectItem;
 
 function ProjectItemNextArrow(props: any) {
   const { className, style, onClick, Increase, themeContext } = props;
-
+  console.log(`현재페이지:${props.currentSlide + 1}`);
+  console.log(`총페이지 :${props.slideCount}`);
+  console.log(props);
   return (
-    <FaArrowRight
-      className={className}
-      style={{
-        color: themeContext.color,
-        width: '32px',
-        height: '32px',
-        zIndex: 10,
-        position: 'absolute',
-        top: '105%',
-        right: '25%',
-        ...style,
-      }}
-      onClick={e => {
-        e.stopPropagation();
-        onClick();
-        Increase();
-      }}
-    />
+    <>
+      <FaArrowRight
+        className={className}
+        style={{
+          color: themeContext.color,
+          width: '32px',
+          height: '32px',
+          zIndex: 10,
+          position: 'absolute',
+          top: '105%',
+          right: '25%',
+          ...style,
+        }}
+        onClick={e => {
+          e.stopPropagation();
+          onClick();
+          Increase();
+        }}
+      />
+      <div className='item_silder_container_index'>
+        {props.currentSlide + 1}/{props.slideCount}
+      </div>
+    </>
   );
 }
 
