@@ -1,11 +1,12 @@
 import React, { useEffect, useState, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-
+import { BsChevronDoubleDown } from 'react-icons/bs';
+import { RiDoubleQuotesL } from 'react-icons/ri';
 const Intro = React.forwardRef((props, ref) => {
   const [textCount, setTextCount] = useState(0);
 
   const convertedText = [
-    `\n 부족한 부분은 채워가며, 아쉬운 부분은 다듬어가는 `,
+    `\n 아쉬운 부분은 다듬어가는 `,
     '\n 노력과 결과를 보여줄 수있는 ',
     '\n 더 좋은 코드에 대해 고민하는 ',
   ];
@@ -29,18 +30,25 @@ const Intro = React.forwardRef((props, ref) => {
             node!;
         }}
       >
-        <h3>안녕하세요. 프론트 엔드 개발자 임동건입니다.</h3>
-        <h3>
-          {convertedText.map((text, index) => (
-            <ConvertedText
-              state={index === textCount ? 'active' : 'hide'}
-              key={index}
-            >
-              {text}
-            </ConvertedText>
-          ))}
-          &nbsp;개발자가 되겠습니다.
-        </h3>
+        <div className='intro_item'>
+          <h3>안녕하세요.</h3>
+          <div className='intro_item_second'>
+            {convertedText.map((text, index) => (
+              <ConvertedText
+                state={index === textCount ? 'active' : 'hide'}
+                key={index}
+              >
+                {/* &emsp;&emsp;&emsp;&emsp; */}
+                {text}
+              </ConvertedText>
+            ))}
+          </div>
+          <h3> 프론트 엔드 개발자 임동건입니다.</h3>
+        </div>
+
+        <div className='mouse_image_container'>
+          <BsChevronDoubleDown size={40} className='mouse_image' />
+        </div>
       </IntroContainer>
     </>
   );
@@ -54,30 +62,49 @@ const IntroContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  font-size: 2.6rem;
 
   h3 {
-    white-space: pre-line;
-    font-family: NotoSansKR-Regular;
-    text-align: center;
-    font-size: 2.4rem;
+    margin-top: 24px;
   }
 
-  .scroll {
-    font-size: 1.4rem;
+  .intro_item {
+    padding: 16px;
+  }
+
+  .intro_item_second {
+    text-align: center;
+    padding-right: 20%;
+  }
+  .intro_item > h3:nth-child(3) {
+    text-align: end;
+  }
+
+  .mouse_image_container {
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: fadein 3s;
+  }
+
+  .mouse_image {
+    color: #d0d0d0;
+    animation: bounce 0.5s infinite alternate;
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(-15px);
+      }
+    }
   }
 `;
 
-const ConvertedText = styled.p<{ state: string }>`
-  font-family: NotoSansKR-Regular;
-  text-align: center;
-  font-size: 2.4rem;
-  animation: fadein 5s ease-in-out;
-  white-space: pre-line;
+const ConvertedText = styled.h3<{ state: string }>`
+  animation: fadein 4s ease-in-out;
+  text-align:center;
 
   ${props =>
     props.state === 'active'
@@ -86,7 +113,7 @@ const ConvertedText = styled.p<{ state: string }>`
           @keyframes fadein{
             0% {
               opacity: 0;
-              transform: translateY(20px);
+              transform: translateY(10px);
             }
             100% {
               opacity: 1;
