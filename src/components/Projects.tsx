@@ -45,6 +45,8 @@ const Projects = React.forwardRef((props, ref) => {
         chat2,
         chat3,
       ],
+      readmeUrl:
+        'https://cottony-change-0c1.notion.site/Fungap-Read-Me-6f932740e7fa4989a3e94720de41d1b2',
     },
     {
       id: 2,
@@ -58,6 +60,8 @@ const Projects = React.forwardRef((props, ref) => {
       youtubeUrl: '',
       githubUrl: 'https://github.com/Ldonggun/velog-clone',
       imageUrl: [login, signup],
+      readmeUrl:
+        'https://cottony-change-0c1.notion.site/Velog-clon-coding-Read-Me-37e23ae81ec74e878df04166e260bf9e',
     },
     {
       id: 3,
@@ -71,6 +75,8 @@ const Projects = React.forwardRef((props, ref) => {
       youtubeUrl: '',
       githubUrl: 'https://github.com/Ldonggun/lost99-frontend',
       imageUrl: [detail, post],
+      readmeUrl:
+        'https://cottony-change-0c1.notion.site/LOST99-Read-Me-51ccbba249c945b7ac4daa0dc53ed6ca',
     },
   ];
   return (

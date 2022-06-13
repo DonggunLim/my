@@ -8,7 +8,7 @@ import video from '../assets/image/video.png';
 import github from '../assets/image/github_git_icon.png';
 import '../styles/fonts/font.css';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-
+import { AiOutlineRead } from 'react-icons/ai';
 interface ProjectItemProps {
   title: string;
   explain: string;
@@ -19,6 +19,7 @@ interface ProjectItemProps {
   youtubeUrl: string;
   githubUrl: string;
   imageUrl: string[];
+  readmeUrl: string;
 }
 
 const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
@@ -33,6 +34,7 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
     youtubeUrl,
     githubUrl,
     imageUrl,
+    readmeUrl,
   } = data;
 
   const TOTAL_IMAGE_COUNT = imageUrl.length;
@@ -107,7 +109,12 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
           </div>
         </div>
         <div className='textcontainer_body_footer'>
-          <a href={youtubeUrl} className='footer_video'>
+          <a
+            href={youtubeUrl}
+            target='_blank'
+            rel='noreferrer'
+            className='footer_video'
+          >
             <Image
               isCircle='true'
               url={video}
@@ -116,7 +123,12 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
               bgColor='#fff'
             />
           </a>
-          <a href={githubUrl} className='footer_github'>
+          <a
+            href={githubUrl}
+            target='_blank'
+            rel='noreferrer'
+            className='footer_github'
+          >
             <Image
               isCircle='true'
               url={github}
@@ -124,6 +136,17 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
               height='40px'
               bgColor='#fff'
             />
+          </a>
+          <a
+            href={readmeUrl}
+            target='_blank'
+            rel='noreferrer'
+            className='footer_readme'
+          >
+            <button>
+              <AiOutlineRead size={35} />
+              &ensp;Read Me
+            </button>
           </a>
         </div>
       </TextContainer>
@@ -254,6 +277,19 @@ const TextContainer = styled.div`
     a {
       cursor: pointer;
       margin: 4px;
+
+      button {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        background-color: #fff;
+        border: 1px solid #dfdfdf;
+        cursor: pointer;
+        border-radius: 8px;
+        &:hover {
+          background-color: #dfdfdf;
+        }
+      }
     }
   }
 `;

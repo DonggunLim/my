@@ -38,7 +38,6 @@ const Intro = React.forwardRef((props, ref) => {
                 state={index === textCount ? 'active' : 'hide'}
                 key={index}
               >
-                {/* &emsp;&emsp;&emsp;&emsp; */}
                 {text}
               </ConvertedText>
             ))}
