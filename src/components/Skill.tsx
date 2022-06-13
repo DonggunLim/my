@@ -13,7 +13,6 @@ const Skill = React.forwardRef((props, ref) => {
         (ref! as React.MutableRefObject<Array<HTMLElement>>).current[2] = node!;
       }}
     >
-      {/* <BackgroundLine className='line' color='#C2DED1' /> */}
       <h1 className='skill_title'>Skill</h1>
       <SkillBody className='skill_body'>
         <Image
@@ -49,10 +48,8 @@ export default Skill;
 
 const SkillContainer = styled.section`
   width: 100%;
-  height: 800px;
-  padding: 88px 32px;
-  // margin: 85px 0px;
-
+  height: 100vh;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
 

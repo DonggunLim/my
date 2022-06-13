@@ -43,7 +43,7 @@ const Header = ({
     }
     elementList[target].scrollIntoView({
       behavior: 'smooth',
-      block: target === 3 ? 'start' : 'center',
+      block: 'start',
     });
   };
 

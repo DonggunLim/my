@@ -75,5 +75,6 @@ export default App;
 const Main = styled.main`
   width: 1290px;
   margin: auto;
-  padding-top: 100px;
+  padding: 32px;
+  // padding-top: 100px;
 `;

@@ -93,8 +93,7 @@ export default Projects;
 const ProjectsContainer = styled.section`
   width: 100%;
   height: 100%;
-  padding: 88px 32px;
-  margin: 115px 0px;
+  padding-top: 100px;
   .projects_title {
     font-size: 5rem;
     font-family: 'BlackHanSans-Regular';
