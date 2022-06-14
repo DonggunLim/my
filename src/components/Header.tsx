@@ -99,7 +99,7 @@ const Navigation = styled.nav`
 `;
 
 const NavItemContainer = styled.ul`
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-evenly;
 

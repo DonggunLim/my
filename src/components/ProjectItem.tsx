@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Image } from './index';
 import Slider from 'react-slick';
@@ -24,6 +24,7 @@ interface ProjectItemProps {
 
 const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
   const themeContext = useContext(ThemeContext);
+  console.log(themeContext);
   const {
     title,
     explain,
@@ -48,7 +49,7 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
   };
 
   return (
-    <ItemContainer className='item_container'>
+    <ItemContainer className='item_container' themeContext={themeContext}>
       <SilderContainer className='item_silder_container'>
         <StyledImageSlider {...settings}>
           {imageUrl.map((image: string, index) => (
@@ -136,9 +137,7 @@ export default ProjectItem;
 
 function ProjectItemNextArrow(props: any) {
   const { className, style, onClick, themeContext } = props;
-  console.log(`현재페이지:${props.currentSlide + 1}`);
-  console.log(`총페이지 :${props.slideCount}`);
-  console.log(props);
+  console.log('slider', themeContext);
   return (
     <>
       <FaArrowRight
@@ -188,14 +187,17 @@ function ProjectItemPrevArrow(props: any) {
   );
 }
 
-const ItemContainer = styled.div`
+const ItemContainer = styled.div<{
+  themeContext: { color: string; bgColor: string };
+}>`
   width: 100%;
   display: flex;
   padding: 40px;
   border: 1px solid #dfdfdf;
   border-radius: 1rem;
   background-color: #fff;
-  margin-bottom: 24px;
+  margin: 24px 0px;
+  background-color: ${props => props.themeContext.bgColor};
 `;
 
 const SilderContainer = styled.div`

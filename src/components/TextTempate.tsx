@@ -70,8 +70,8 @@ const TextTemplate = () => {
             <p className='age'>2015.03- 한남대학교 행정학과 입학</p>
             <p className='age'>2016.06- 군입대</p>
             <p className='age'>2018.09- 한남대학교 중퇴</p>
-            <p className='age'>2020.02- 학점 은행제 경역학사 취득</p>
-            <p className='age'>2021.09- 스파르타 코딩클럽 항해99 수료</p>
+            <p className='age'>2020.02- 학점 은행제 경역학사</p>
+            <p className='age'>2021.12- 스파르타 코딩클럽 항해99 수료</p>
           </div>
         </div>
         <div className='item'>
@@ -85,6 +85,19 @@ const TextTemplate = () => {
           <div className='item_contents'>
             <h3>자격증</h3>
             <p className='age'>토익 855점</p>
+          </div>
+        </div>
+        <div className='item'>
+          <Image
+            isCircle='true'
+            url={penIcon}
+            width='40px'
+            height='40px'
+            bgColor='#fff'
+          />
+          <div className='item_contents'>
+            <h3>주소</h3>
+            <p className='age'>서울 서초구</p>
           </div>
         </div>
       </div>
