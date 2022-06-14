@@ -18,6 +18,12 @@ import {
 } from '../../assets/image/fungap';
 import { detail, post } from '../../assets/image/lost99';
 import { login, signup } from '../../assets/image/velog';
+import {
+  portfolio1,
+  portfolio2,
+  portfolio3,
+  portfolio4,
+} from '../../assets/image/portfolio';
 
 const Projects = React.forwardRef((_props, ref) => {
   const data = [
@@ -76,6 +82,21 @@ const Projects = React.forwardRef((_props, ref) => {
       imageUrl: [detail, post],
       readmeUrl:
         'https://cottony-change-0c1.notion.site/LOST99-Read-Me-51ccbba249c945b7ac4daa0dc53ed6ca',
+    },
+    {
+      id: 4,
+      title: '포트폴리오 웹사이트',
+      explain:
+        'React를 이용해 포트폴리용으로 제작한 웹사이트입니다. 복잡한 기능을 넣기 보다는 단순하고 편하게 볼수 있도록 만들어 보았습니다. 배포는 CI/CD와 나중의 백엔드 필요성을 고려하여 aws-amplify를 이용하였습니다. ',
+      tech: 'React.js, typescript, styled-components',
+      service: '간단한 자기소개와 인적 사항, 기술 스택, 프로젝트 경험 ',
+      deployment: 'aws-Amplify',
+      url: 'https://www.ldonggun.me/',
+      youtubeUrl: '',
+      githubUrl: 'https://github.com/Ldonggun/my',
+      imageUrl: [portfolio1, portfolio2, portfolio3, portfolio4],
+      readmeUrl:
+        'https://cottony-change-0c1.notion.site/Portfolio-Read-Me-fb5acd18e32d4ce58dbc6ec266878c84',
     },
   ];
 
