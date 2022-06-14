@@ -23,10 +23,10 @@ const Email = (props: EmailProps) => {
     setSpinnerVisible(true);
     emailjs
       .sendForm(
-        'portfolio_service',
-        'template_zxql2l9',
+        process.env.REACT_APP_EMAILJS_SERVICE_ID! as string,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID! as string,
         formRef.current! as HTMLFormElement,
-        'N_kjurkulRPoR7eXn',
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
       ) //
       .then(_result => {
         setCheckStatus(prev => !prev);
