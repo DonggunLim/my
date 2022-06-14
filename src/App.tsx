@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import GlobalStyle from './styles/GlobalStyle';
 import styled, { ThemeProvider } from 'styled-components';
 import {
@@ -8,7 +8,7 @@ import {
   Skill,
   Footer,
   Intro,
-  Modal,
+  Email,
 } from './components/index';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -18,7 +18,7 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri';
 function App() {
   const scrollRef = useRef<HTMLElement[] | null>([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [modalVisible, setModalVisible] = useState(false);
+  const [emailVisible, setEmailVisible] = useState(false);
   const toggleMode = () => {
     setIsDarkMode(prev => {
       isDarkMode
@@ -28,7 +28,7 @@ function App() {
     });
   };
 
-  const handleModal = () => setModalVisible(!modalVisible);
+  const handleVisible = () => setEmailVisible(!emailVisible);
 
   useEffect(() => {
     AOS.init({
@@ -50,7 +50,7 @@ function App() {
           scrollRef={scrollRef}
           toggleMode={toggleMode}
           isDarkmode={isDarkMode}
-          handleModal={handleModal}
+          handleVisible={handleVisible}
         />
         <Main>
           <RiDoubleQuotesL size={250} className='bg_icon_left' />
@@ -66,8 +66,8 @@ function App() {
             <Projects ref={scrollRef} />
           </div>
         </Main>
-        <Footer handleModal={handleModal} />
-        <Modal modalVisible={modalVisible} handleModal={handleModal} />
+        <Footer handleVisible={handleVisible} />
+        <Email emailVisible={emailVisible} handleVisible={handleVisible} />
       </ThemeProvider>
     </>
   );

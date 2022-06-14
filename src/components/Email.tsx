@@ -4,14 +4,16 @@ import { Spinner } from './index';
 import { IoClose } from 'react-icons/io5';
 import { FaCheck } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import { Image } from './index';
+import myImage from '../assets/image/myimage.jpg';
 
-interface ModalProps {
-  modalVisible: boolean;
-  handleModal: () => void;
+interface EmailProps {
+  emailVisible: boolean;
+  handleVisible: () => void;
 }
 
-const Modal = (props: ModalProps) => {
-  const { modalVisible, handleModal } = props;
+const Email = (props: EmailProps) => {
+  const { emailVisible, handleVisible } = props;
   const [checkStatus, setCheckStatus] = useState(false);
   const [spinnerVisible, setSpinnerVisible] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -36,11 +38,19 @@ const Modal = (props: ModalProps) => {
   };
 
   return (
-    <ModalContainer className='modal_container' modalVisible={modalVisible}>
+    <EmailContainer className='email_container' emailVisible={emailVisible}>
       <Spinner visible={spinnerVisible} />
-      <div className='modal_header' onClick={handleModal}>
-        <IoClose size='32px' className='modal_close_btn' />
-      </div>
+      <section className='email_header'>
+        <div className='header_left'>
+          <Image url={myImage} isCircle='true' width='30px' height='30px' />
+          <p>관심주셔서 감사합니다.</p>
+        </div>
+        <IoClose
+          size='32px'
+          className='email_close_btn'
+          onClick={handleVisible}
+        />
+      </section>
       <form className='email_form' onSubmit={sendEmail} ref={formRef}>
         <label htmlFor='email'>Email</label>
         <input
@@ -60,14 +70,14 @@ const Modal = (props: ModalProps) => {
       >
         <FaCheck size='38px' className='check_image' />
       </CheckButton>
-    </ModalContainer>
+    </EmailContainer>
   );
 };
 
-export default Modal;
+export default Email;
 
-const ModalContainer = styled.section<{ modalVisible: boolean }>`
-  display: ${props => (props.modalVisible ? 'block' : 'none')};
+const EmailContainer = styled.section<{ emailVisible: boolean }>`
+  display: ${props => (props.emailVisible ? 'block' : 'none')};
   width: 300px;
   height: 500px;
   border: 1px solid #f2f2f2;
@@ -123,15 +133,23 @@ const ModalContainer = styled.section<{ modalVisible: boolean }>`
   label {
     font-size: 1.2rem;
   }
-  .modal_header {
-    text-align: end;
-    background-color: #efefef;
+  .email_header {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    border-top-right-radius: 16px;
-    border-top-left-radius: 16px;
     padding: 8px;
   }
-  .modal_close_btn {
+
+  .header_left {
+    display: flex;
+    align-items: center;
+    p {
+      padding-left: 6px;
+      font-size: 1rem;
+    }
+  }
+
+  .email_close_btn {
     text-align: end;
     cursor: pointer;
   }

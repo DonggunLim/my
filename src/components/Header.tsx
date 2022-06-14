@@ -8,14 +8,14 @@ interface HeaderProps {
   scrollRef: React.MutableRefObject<object | null>;
   toggleMode: () => void;
   isDarkmode: boolean;
-  handleModal: () => void;
+  handleVisible: () => void;
 }
 
 const Header = ({
   scrollRef,
   toggleMode,
   isDarkmode,
-  handleModal,
+  handleVisible,
 }: HeaderProps) => {
   const autoScroll = (e: React.MouseEvent) => {
     const clickElementName: 'About' | 'Skill' | 'Project' | string = (
@@ -60,7 +60,7 @@ const Header = ({
         </NavItemContainer>
         <NavItemContainer width='20%' justifyCt='none'>
           <NavItem>
-            <AiOutlineMail size='41' onClick={handleModal} />
+            <AiOutlineMail size='41' onClick={handleVisible} />
           </NavItem>
           <NavItem>
             <FaGithub size='37' onClick={goGithub} />

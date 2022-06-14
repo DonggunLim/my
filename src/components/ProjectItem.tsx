@@ -1,13 +1,16 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Image } from './index';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import video from '../assets/image/video.png';
-import github from '../assets/image/github_git_icon.png';
 import '../styles/fonts/font.css';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import {
+  FaArrowRight,
+  FaArrowLeft,
+  FaGithub,
+  FaPlayCircle,
+} from 'react-icons/fa';
 import { AiOutlineRead } from 'react-icons/ai';
 interface ProjectItemProps {
   title: string;
@@ -24,7 +27,6 @@ interface ProjectItemProps {
 
 const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
   const themeContext = useContext(ThemeContext);
-  console.log(themeContext);
   const {
     title,
     explain,
@@ -94,13 +96,7 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
             rel='noreferrer'
             className='footer_video'
           >
-            <Image
-              isCircle='true'
-              url={video}
-              width='40px'
-              height='40px'
-              bgColor='#fff'
-            />
+            <FaPlayCircle size={35} />
           </a>
           <a
             href={githubUrl}
@@ -108,13 +104,7 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
             rel='noreferrer'
             className='footer_github'
           >
-            <Image
-              isCircle='true'
-              url={github}
-              width='40px'
-              height='40px'
-              bgColor='#fff'
-            />
+            <FaGithub size={35} />
           </a>
           <a
             href={readmeUrl}
@@ -137,7 +127,6 @@ export default ProjectItem;
 
 function ProjectItemNextArrow(props: any) {
   const { className, style, onClick, themeContext } = props;
-  console.log('slider', themeContext);
   return (
     <>
       <FaArrowRight
@@ -198,6 +187,7 @@ const ItemContainer = styled.div<{
   background-color: #fff;
   margin: 24px 0px;
   background-color: ${props => props.themeContext.bgColor};
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 `;
 
 const SilderContainer = styled.div`

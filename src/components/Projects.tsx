@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+//components
 import { ProjectItem } from './index';
-
+//image
 import {
   main,
   userpage,
@@ -18,7 +19,7 @@ import {
 import { detail, post } from '../assets/image/lost99';
 import { login, signup } from '../assets/image/velog';
 
-const Projects = React.forwardRef((props, ref) => {
+const Projects = React.forwardRef((_props, ref) => {
   const data = [
     {
       id: 1,
@@ -77,6 +78,7 @@ const Projects = React.forwardRef((props, ref) => {
         'https://cottony-change-0c1.notion.site/LOST99-Read-Me-51ccbba249c945b7ac4daa0dc53ed6ca',
     },
   ];
+
   return (
     <ProjectsContainer
       className='projects'
