@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Image, TextTemplate } from './index';
 import aboutImgae from '../assets/image/mainimage.jpg';
 
-const About = React.forwardRef((props, ref) => {
+const About = React.forwardRef((_props, ref) => {
   return (
     <AboutContainer
       className='about'
@@ -11,12 +11,7 @@ const About = React.forwardRef((props, ref) => {
         (ref! as React.MutableRefObject<Array<HTMLElement>>).current[1] = node!;
       }}
     >
-      <Image
-        isCircle='true'
-        width='290px'
-        height='290px'
-        url={aboutImgae}
-      ></Image>
+      <Image isCircle='true' width='290px' height='290px' url={aboutImgae} />
       <TextTemplate />
     </AboutContainer>
   );

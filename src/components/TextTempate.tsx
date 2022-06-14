@@ -1,11 +1,7 @@
 import styled from 'styled-components';
-import { Image } from './index';
-import brithIcon from '../assets/image/icons8-birthday-35.png';
-import EmailIcon from '../assets/image/icons8-gmail-35.png';
-import penIcon from '../assets/image/icons8-pen-35.png';
-import graduateIcon from '../assets/image/icons8-graduate-35.png';
-import callIcon from '../assets/image/icons8-call-30.png';
-import '../styles/fonts/font.css';
+import { AiOutlineMail, AiOutlineCalendar } from 'react-icons/ai';
+import { BsPencil } from 'react-icons/bs';
+import { FaUserGraduate, FaBook, FaMapMarkerAlt } from 'react-icons/fa';
 
 const TextTemplate = () => {
   return (
@@ -16,55 +12,28 @@ const TextTemplate = () => {
       </div>
       <div className='about_info'>
         <div className='item'>
-          <Image
-            isCircle='true'
-            url={EmailIcon}
-            width='40px'
-            height='40px'
-            bgSize='none'
-            bgColor='#fff'
-          />
+          <AiOutlineMail size={35} />
           <div className='item_contents'>
             <h3>이메일</h3>
             <p className='email'>ehdrjs130@gamil.com</p>
           </div>
         </div>
         <div className='item'>
-          <Image
-            isCircle='true'
-            url={brithIcon}
-            width='40px'
-            height='40px'
-            bgColor='#fff'
-          />
+          <AiOutlineCalendar size={35} />
           <div className='item_contents'>
             <h3>생년월일</h3>
             <p className='age'>1996 05 31</p>
           </div>
         </div>
         <div className='item'>
-          <Image
-            isCircle='true'
-            url={callIcon}
-            width='40px'
-            height='40px'
-            bgSize='none'
-            bgColor='#fff'
-          />
+          <BsPencil size={33} />
           <div className='item_contents'>
             <h3>연락처</h3>
             <p className='age'>01086506766</p>
           </div>
         </div>
         <div className='item'>
-          <Image
-            isCircle='true'
-            url={graduateIcon}
-            width='40px'
-            height='40px'
-            bgSize='none'
-            bgColor='#fff'
-          />
+          <FaUserGraduate size={35} />
           <div className='item_contents'>
             <h3>학력/수료</h3>
             <p className='age'>2015.03- 한남대학교 행정학과 입학</p>
@@ -75,26 +44,14 @@ const TextTemplate = () => {
           </div>
         </div>
         <div className='item'>
-          <Image
-            isCircle='true'
-            url={penIcon}
-            width='40px'
-            height='40px'
-            bgColor='#fff'
-          />
+          <FaBook size={35} />
           <div className='item_contents'>
             <h3>자격증</h3>
             <p className='age'>토익 855점</p>
           </div>
         </div>
         <div className='item'>
-          <Image
-            isCircle='true'
-            url={penIcon}
-            width='40px'
-            height='40px'
-            bgColor='#fff'
-          />
+          <FaMapMarkerAlt size={35} />
           <div className='item_contents'>
             <h3>주소</h3>
             <p className='age'>서울 서초구</p>
@@ -127,6 +84,7 @@ const TextContainer = styled.div`
       flex: 1 1 30%;
       display: flex;
       flex-direction: row;
+      align-items: start;
       margin: 15px;
     }
 
