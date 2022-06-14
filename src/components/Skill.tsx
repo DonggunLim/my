@@ -5,7 +5,7 @@ import group1 from '../assets/image/Group1.png';
 import group2 from '../assets/image/Group2.png';
 import group3 from '../assets/image/Group3.png';
 
-const Skill = React.forwardRef((props, ref) => {
+const Skill = React.forwardRef((_props, ref) => {
   return (
     <SkillContainer
       className='skill'
@@ -67,14 +67,4 @@ const SkillBody = styled.div`
   div {
     margin: 16px;
   }
-`;
-
-const BackgroundLine = styled.div`
-  width: 100vw;
-  height: 900px;
-  background-color: ${props => (props.color ? props.color : '#ccc')};
-  position: absolute;
-  left: -17px;
-  top: 976px;
-  z-index: -100;
 `;
