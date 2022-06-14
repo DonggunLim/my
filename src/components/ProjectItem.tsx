@@ -62,9 +62,6 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
             />
           ))}
         </StyledImageSlider>
-        {/* <div className='item_silder_container_index'>
-          {currentImageCount}/{TOTAL_IMAGE_COUNT}
-        </div> */}
       </SilderContainer>
       <TextContainer className='item_text_container'>
         <h1 className='textcontainer_title'>{title}</h1>
@@ -138,7 +135,7 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
 export default ProjectItem;
 
 function ProjectItemNextArrow(props: any) {
-  const { className, style, onClick, Increase, themeContext } = props;
+  const { className, style, onClick, themeContext } = props;
   console.log(`현재페이지:${props.currentSlide + 1}`);
   console.log(`총페이지 :${props.slideCount}`);
   console.log(props);
@@ -159,7 +156,6 @@ function ProjectItemNextArrow(props: any) {
         onClick={e => {
           e.stopPropagation();
           onClick();
-          Increase();
         }}
       />
       <div className='item_silder_container_index'>
@@ -170,7 +166,7 @@ function ProjectItemNextArrow(props: any) {
 }
 
 function ProjectItemPrevArrow(props: any) {
-  const { className, style, onClick, decrease, themeContext } = props;
+  const { className, style, onClick, themeContext } = props;
   return (
     <FaArrowLeft
       className={className}
@@ -187,7 +183,6 @@ function ProjectItemPrevArrow(props: any) {
       onClick={e => {
         e.stopPropagation();
         onClick();
-        decrease();
       }}
     />
   );
@@ -197,6 +192,10 @@ const ItemContainer = styled.div`
   width: 100%;
   display: flex;
   padding: 40px;
+  border: 1px solid #dfdfdf;
+  border-radius: 1rem;
+  background-color: #fff;
+  margin-bottom: 24px;
 `;
 
 const SilderContainer = styled.div`
@@ -218,8 +217,8 @@ const TextContainer = styled.div`
   padding: 16px;
 
   .textcontainer_title {
-    font-weight: 700;
-    font-size: 3rem;
+    font-weight: 400;
+    font-size: 2.6rem;
     text-align: center;
     margin: 16px 0px;
     font-family: 'BlackHanSans-Regular';
