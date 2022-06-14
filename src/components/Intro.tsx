@@ -1,14 +1,14 @@
-import React, { useEffect, useState, forwardRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { BsChevronDoubleDown } from 'react-icons/bs';
-import { RiDoubleQuotesL } from 'react-icons/ri';
-const Intro = React.forwardRef((props, ref) => {
+
+const Intro = React.forwardRef((_props, ref) => {
   const [textCount, setTextCount] = useState(0);
 
   const convertedText = [
-    `\n 아쉬운 부분은 다듬어가는 `,
-    '\n 노력과 결과를 보여줄 수있는 ',
-    '\n 더 좋은 코드에 대해 고민하는 ',
+    `아쉬운 부분은 다듬어가는 `,
+    '노력과 결과를 보여줄 수있는 ',
+    '더 좋은 코드에 대해 고민하는 ',
   ];
 
   useEffect(() => {
@@ -44,9 +44,8 @@ const Intro = React.forwardRef((props, ref) => {
           </div>
           <h3> 프론트 엔드 개발자 임동건입니다.</h3>
         </div>
-
-        <div className='mouse_image_container'>
-          <BsChevronDoubleDown size={40} className='mouse_image' />
+        <div className='arrow_image_container'>
+          <BsChevronDoubleDown size={40} className='arrow_image' />
         </div>
       </IntroContainer>
     </>
@@ -80,13 +79,13 @@ const IntroContainer = styled.section`
     text-align: end;
   }
 
-  .mouse_image_container {
+  .arrow_image_container {
     position: absolute;
     bottom: 50px;
     left: 50%;
   }
 
-  .mouse_image {
+  .arrow_image {
     color: #d0d0d0;
     animation: bounce 0.5s infinite alternate;
 
