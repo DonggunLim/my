@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 //components
-import { ProjectItem } from './index';
+import { ProjectItem } from '../index';
 //image
 import {
   main,
@@ -15,9 +15,9 @@ import {
   chat1,
   chat2,
   chat3,
-} from '../assets/image/fungap';
-import { detail, post } from '../assets/image/lost99';
-import { login, signup } from '../assets/image/velog';
+} from '../../assets/image/fungap';
+import { detail, post } from '../../assets/image/lost99';
+import { login, signup } from '../../assets/image/velog';
 
 const Projects = React.forwardRef((_props, ref) => {
   const data = [

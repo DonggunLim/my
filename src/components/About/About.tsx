@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Image, TextTemplate } from './index';
-import aboutImgae from '../assets/image/myimage.jpg';
+import { Image, TextTemplate } from '../index';
+import aboutImgae from '../../assets/image/myimage.jpg';
 
 const About = React.forwardRef((_props, ref) => {
   return (

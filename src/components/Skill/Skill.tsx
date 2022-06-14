@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from './Image';
-import group1 from '../assets/image/Group1.png';
-import group2 from '../assets/image/Group2.png';
-import group3 from '../assets/image/Group3.png';
+import Image from '../Image/Image';
+import group1 from '../../assets/image/Group1.png';
+import group2 from '../../assets/image/Group2.png';
+import group3 from '../../assets/image/Group3.png';
 
 const Skill = React.forwardRef((_props, ref) => {
   return (

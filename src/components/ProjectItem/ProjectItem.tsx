@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { Image } from './index';
+import { Image } from '../index';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../styles/fonts/font.css';
+import '../../styles/fonts/font.css';
 import {
   FaArrowRight,
   FaArrowLeft,

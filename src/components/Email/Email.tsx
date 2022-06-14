@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import { Spinner } from './index';
+import { Spinner } from '../index';
 import { IoClose } from 'react-icons/io5';
 import { FaCheck } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
-import { Image } from './index';
-import myImage from '../assets/image/myimage.jpg';
+import { Image } from '../index';
+import myImage from '../../assets/image/myimage.jpg';
 
 interface EmailProps {
   emailVisible: boolean;
