@@ -56,7 +56,7 @@ export default Intro;
 
 const IntroContainer = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;

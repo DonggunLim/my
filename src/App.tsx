@@ -13,7 +13,6 @@ import {
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { darkTheme, lightTheme } from './styles/theme';
-import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri';
 
 function App() {
   const scrollRef = useRef<HTMLElement[] | null>([]);
@@ -46,27 +45,21 @@ function App() {
     <>
       <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyle />
-        <Header
-          scrollRef={scrollRef}
-          toggleMode={toggleMode}
-          isDarkmode={isDarkMode}
-          handleVisible={handleVisible}
-        />
-        <Main>
-          <RiDoubleQuotesL size={250} className='bg_icon_left' />
-          <RiDoubleQuotesR size={250} className='bg_icon_right' />
-          <Intro ref={scrollRef} />
-          <div data-aos='fade-right' data-aos-offset='300'>
+        <Wrap className='wrapper'>
+          <Header
+            scrollRef={scrollRef}
+            toggleMode={toggleMode}
+            isDarkmode={isDarkMode}
+            handleVisible={handleVisible}
+          />
+          <Main>
+            <Intro ref={scrollRef} />
             <About ref={scrollRef} />
-          </div>
-          <div data-aos='fade-left' data-aos-offset='400'>
             <Skill ref={scrollRef} />
-          </div>
-          <div data-aos='fade-right' data-aos-offset='500'>
             <Projects ref={scrollRef} />
-          </div>
-        </Main>
-        <Footer handleVisible={handleVisible} />
+          </Main>
+          <Footer handleVisible={handleVisible} />
+        </Wrap>
         <Email emailVisible={emailVisible} handleVisible={handleVisible} />
       </ThemeProvider>
     </>
@@ -76,22 +69,14 @@ function App() {
 export default App;
 
 const Main = styled.main`
-  width: 1290px;
+  width: 1130px;
   margin: auto;
-  padding: 32px;
-  // padding-top: 100px;
+  position: relative;
+  padding-bottom: 160px;
+`;
 
-  .bg_icon_left {
-    position: fixed;
-    color: #efefef;
-    left: 5%;
-    top: 5%;
-  }
-
-  .bg_icon_right {
-    position: fixed;
-    color: #efefef;
-    right: 5%;
-    bottom: 5%;
-  }
+const Wrap = styled.div`
+  min-width: 1190px;
+  min-height: 100vh;
+  position: relative;
 `;

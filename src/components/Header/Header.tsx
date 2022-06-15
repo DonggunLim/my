@@ -81,11 +81,10 @@ const Header = ({
 export default Header;
 
 const HeaderContainer = styled.header`
-  width: 100%;
-  padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   background-color: #354259;
   box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
   z-index: 1000;
@@ -94,7 +93,8 @@ const HeaderContainer = styled.header`
 
 const Navigation = styled.nav`
   display: flex;
-  width: 1290px;
+  width: 1130px;
+  padding: 16px;
   margin: 0px auto;
 `;
 

@@ -10,6 +10,8 @@ const About = React.forwardRef((_props, ref) => {
       ref={node => {
         (ref! as React.MutableRefObject<Array<HTMLElement>>).current[1] = node!;
       }}
+      data-aos='fade-right'
+      data-aos-offset='300'
     >
       <Image isCircle='true' width='290px' height='290px' url={aboutImgae} />
       <TextTemplate />
@@ -21,7 +23,7 @@ export default About;
 
 const AboutContainer = styled.section`
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   padding-top: 100px;

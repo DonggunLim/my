@@ -29,22 +29,15 @@ const Footer = (props: FooterProps) => {
 export default Footer;
 
 const FooterContainer = styled.footer`
-  width: 100%;
   height: 160px;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
   border-top: 1px solid #dfdfdf;
-  position: relative;
-  bottom: 0px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;
 
 const FooterTop = styled.div`
-  width: 100%;
   height: 70%;
   background-color: ${props => props.theme.bgColor};
   color: ${props => props.theme.color};
@@ -73,7 +66,6 @@ const FooterTop = styled.div`
 `;
 
 const FooterLower = styled.div`
-  width: 100%;
   height: 30%;
   background-color: #354259;
   text-align: center;

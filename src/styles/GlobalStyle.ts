@@ -27,16 +27,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
-	@media (max-width: 1280px) { 
-		margin:0 100px;
-	}
-
 	background-color: ${props => props.theme.bgColor};
   color: ${props => props.theme.color};
-
 }
+
 ol, ul {
 	list-style: none;
 }
