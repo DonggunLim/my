@@ -83,6 +83,7 @@ const IntroContainer = styled.section`
     position: absolute;
     bottom: 50px;
     left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .arrow_image {
@@ -96,6 +97,20 @@ const IntroContainer = styled.section`
       to {
         transform: translateY(-15px);
       }
+    }
+  }
+
+  @media (max-width: 1130px) {
+    height: 100vh;
+    font-size: 16px;
+    text-align: center;
+
+    .intro_item_second {
+      padding: 0px;
+    }
+
+    .intro_item > h3:nth-child(3) {
+      text-align: center;
     }
   }
 `;

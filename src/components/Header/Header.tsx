@@ -84,10 +84,11 @@ const Header = ({
 export default Header;
 
 const HeaderContainer = styled.header`
-  position: fixed;
-  top: 0;
+  position: absolute;
   left: 0;
   right: 0;
+  top: 0;
+  padding: 8px;
   background-color: #354259;
   box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
   z-index: 1000;
@@ -97,11 +98,10 @@ const HeaderContainer = styled.header`
 const Navigation = styled.nav`
   display: flex;
   width: 1130px;
-  padding: 16px;
   margin: 0px auto;
   @media (max-width: 1130px) {
     width: 100%;
-    font-size: 10px;
+
     .navitem_icons {
       display: none;
     }
@@ -118,6 +118,7 @@ const NavItemContainer = styled.ul<{ width?: string; justifyCt?: string }>`
   font-family: 'BlackHanSans-Regular';
   @media (max-width: 1130px) {
     width: 100%;
+    font-size: 16px;
   }
 `;
 

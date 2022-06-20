@@ -73,10 +73,16 @@ const Main = styled.main`
   margin: auto;
   position: relative;
   padding-bottom: 160px;
+
+  @media (max-width: 1130px) {
+    width: 100%;
+  }
 `;
 
 const Wrap = styled.div`
-  min-width: 1190px;
   min-height: 100vh;
   position: relative;
+  @media (max-width: 1130px) {
+    width: 100%;
+  }
 `;

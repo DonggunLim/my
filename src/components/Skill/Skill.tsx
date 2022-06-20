@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Image from '../Image/Image';
 import group1 from '../../assets/image/Group1.png';
@@ -6,6 +6,10 @@ import group2 from '../../assets/image/Group2.png';
 import group3 from '../../assets/image/Group3.png';
 
 const Skill = React.forwardRef((_props, ref) => {
+  const [windowSize, setWindowSize] = useState<number | null>(null);
+  useEffect(() => {
+    setWindowSize(window.screen.width);
+  }, []);
   return (
     <SkillContainer
       className='skill'
@@ -20,15 +24,15 @@ const Skill = React.forwardRef((_props, ref) => {
         <Image
           url={group1}
           isCircle='16px'
-          width='400px'
-          height='600px'
+          width={windowSize! < 1130 ? '350px' : '360px'}
+          height={windowSize! < 1130 ? '400px' : '600px'}
           bgSize='cover'
           hover={true}
         />
         <Image
           url={group2}
           isCircle='16px'
-          width='350px'
+          width='360px'
           height='600px'
           bgSize='cover'
           hover={true}
@@ -36,7 +40,7 @@ const Skill = React.forwardRef((_props, ref) => {
         <Image
           url={group3}
           isCircle='16px'
-          width='350px'
+          width='360px'
           height='250px'
           bgSize='cover'
           hover={true}
@@ -50,23 +54,38 @@ export default Skill;
 
 const SkillContainer = styled.section`
   width: 100%;
-  // height: 100vh;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
+  padding: 16px;
 
   .skill_title {
     font-size: 5rem;
     font-family: 'BlackHanSans-Regular';
+  }
+
+  @media (max-width: 1130px) {
+    .skill_title {
+      font-size: 3rem;
+      text-align: center;
+    }
   }
 `;
 
 const SkillBody = styled.div`
   display: flex;
   justify-content: center;
-  padding: 16px;
-
   div {
-    margin: 16px;
+    margin: 0px 8px;
+  }
+
+  @media (max-width: 1130px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    div {
+      margin-bottom: 8px;
+    }
   }
 `;

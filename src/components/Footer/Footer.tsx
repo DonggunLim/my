@@ -38,7 +38,7 @@ const FooterContainer = styled.footer`
 `;
 
 const FooterTop = styled.div`
-  height: 70%;
+  height: 200px;
   background-color: ${props => props.theme.bgColor};
   color: ${props => props.theme.color};
   display: flex;
@@ -62,6 +62,13 @@ const FooterTop = styled.div`
 
   .email_icon {
     cursor: pointer;
+  }
+
+  @media (max-width: 1130px) {
+    flex-direction: column;
+    .email_icon {
+      padding-top: 16px;
+    }
   }
 `;
 

@@ -181,13 +181,17 @@ const ItemContainer = styled.div<{
 }>`
   width: 100%;
   display: flex;
-  padding: 40px;
+  padding: 40px 0px;
   border: 1px solid #dfdfdf;
   border-radius: 1rem;
   background-color: #fff;
   margin: 24px 0px;
   background-color: ${props => props.themeContext.bgColor};
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+  @media (max-width: 1130px) {
+    flex-direction: column;
+  }
 `;
 
 const SilderContainer = styled.div`
@@ -199,6 +203,10 @@ const SilderContainer = styled.div`
     font-weight: 900;
     text-align: center;
     margin-top: 16px;
+  }
+
+  @media (max-width: 1130px) {
+    width: 100%;
   }
 `;
 
@@ -235,18 +243,19 @@ const TextContainer = styled.div`
     margin-bottom: 1rem;
   }
   .textcontainer_body_subtitle {
-    width: 20%;
+    width: 40%;
     font-size: 1.2rem;
     font-weight: 600;
     margin-right: 8px;
   }
 
   .textcontainer_body_contents {
-    width: 80%;
+    width: 60%;
     font-size: 1.2rem;
     font-weight: 400;
     font-family: Noto Sans KR, sans-serif;
     line-height: normal;
+    text-overflow: ellipsis;
   }
 
   .textcontainer_body_footer {
@@ -269,6 +278,13 @@ const TextContainer = styled.div`
           background-color: #dfdfdf;
         }
       }
+    }
+  }
+  @media (max-width: 1130px) {
+    width: 100%;
+    margin-top: 16px;
+    .textcontainer_title {
+      font-size: 2rem;
     }
   }
 `;

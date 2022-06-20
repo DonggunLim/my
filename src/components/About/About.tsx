@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Image, TextTemplate } from '../index';
 import aboutImgae from '../../assets/image/myimage.jpg';
 
 const About = React.forwardRef((_props, ref) => {
+  const [windowSize, setWindowSize] = useState<number | null>(null);
+  useEffect(() => {
+    setWindowSize(window.screen.width);
+  }, []);
   return (
     <AboutContainer
       className='about'
@@ -13,7 +17,14 @@ const About = React.forwardRef((_props, ref) => {
       data-aos='fade-right'
       data-aos-offset='300'
     >
-      <Image isCircle='true' width='290px' height='290px' url={aboutImgae} />
+      <div className='profile-image'>
+        <Image
+          isCircle='true'
+          width={windowSize! < 1130 ? '150px' : '290px'}
+          height={windowSize! < 1130 ? '150px' : '290px'}
+          url={aboutImgae}
+        />
+      </div>
       <TextTemplate />
     </AboutContainer>
   );
@@ -23,8 +34,13 @@ export default About;
 
 const AboutContainer = styled.section`
   width: 100%;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
   padding-top: 100px;
+
+  @media (max-width: 1130px) {
+    .profile-image {
+      margin: auto;
+    }
+  }
 `;

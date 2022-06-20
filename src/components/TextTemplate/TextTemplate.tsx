@@ -68,6 +68,7 @@ const TextContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
   padding: 16px;
   .about_title {
     text_align: center;
@@ -111,5 +112,27 @@ const TextContainer = styled.div`
     font-size: 2.2rem;
     font-weight: 400;
     font-family: 'BlackHanSans-Regular';
+  }
+
+  @media (max-width: 1130px) {
+    .about_info {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      .item {
+        font-size: 1.1rem;
+      }
+    }
+
+    .about_title {
+      text-align: center;
+    }
+    .name {
+      font-size: 3rem;
+    }
+
+    .dev {
+      font-size: 1.6rem;
+    }
   }
 `;

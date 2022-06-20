@@ -91,7 +91,7 @@ const Projects = React.forwardRef((_props, ref) => {
       tech: 'React.js, typescript, styled-components',
       service: '간단한 자기소개와 인적 사항, 기술 스택, 프로젝트 경험 ',
       deployment: 'aws-Amplify',
-      url: 'https://www.ldonggun.me/',
+      url: 'www.ldonggun.me',
       youtubeUrl: '',
       githubUrl: 'https://github.com/Ldonggun/my',
       imageUrl: [portfolio1, portfolio2, portfolio3, portfolio4],
@@ -123,8 +123,17 @@ const ProjectsContainer = styled.section`
   width: 100%;
   height: 100%;
   padding-top: 100px;
+  padding: 6px;
+
   .projects_title {
     font-size: 5rem;
     font-family: 'BlackHanSans-Regular';
+  }
+
+  @media (max-width: 1130px) {
+    .projects_title {
+      font-size: 3rem;
+      text-align: center;
+    }
   }
 `;
