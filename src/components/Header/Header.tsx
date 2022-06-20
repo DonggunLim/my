@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FaRegMoon, FaGithub } from 'react-icons/fa';
 import { BsSun } from 'react-icons/bs';
@@ -48,7 +48,6 @@ const Header = ({
   const goGithub = () => {
     window.open('https://github.com/Ldonggun', '_blank');
   };
-
   return (
     <HeaderContainer className='header'>
       <Navigation>
@@ -58,7 +57,11 @@ const Header = ({
           <NavItem onClick={autoScroll}>Skill</NavItem>
           <NavItem onClick={autoScroll}>Project</NavItem>
         </NavItemContainer>
-        <NavItemContainer width='20%' justifyCt='none'>
+        <NavItemContainer
+          width='20%'
+          justifyCt='center'
+          className='navitem_icons'
+        >
           <NavItem>
             <AiOutlineMail size='41' onClick={handleVisible} />
           </NavItem>
@@ -96,6 +99,13 @@ const Navigation = styled.nav`
   width: 1130px;
   padding: 16px;
   margin: 0px auto;
+  @media (max-width: 1130px) {
+    width: 100%;
+    font-size: 10px;
+    .navitem_icons {
+      display: none;
+    }
+  }
 `;
 
 const NavItemContainer = styled.ul<{ width?: string; justifyCt?: string }>`
@@ -104,9 +114,11 @@ const NavItemContainer = styled.ul<{ width?: string; justifyCt?: string }>`
   justify-content: ${props =>
     props.justifyCt ? props.justifyCt : 'space-around'};
   align-items: center;
-
   font-size: 1.2rem;
   font-family: 'BlackHanSans-Regular';
+  @media (max-width: 1130px) {
+    width: 100%;
+  }
 `;
 
 const NavItem = styled.li<{ url?: string }>`
