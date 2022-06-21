@@ -1,7 +1,7 @@
 import Header from './Header/Header';
 import Image from './Image/Image';
 import About from './About/About';
-import TextTemplate from './TextTemplate/TextTemplate';
+import AboutText from './AboutText/AboutText';
 import Projects from './Projects/Projects';
 import ProjectItem from './ProjectItem/ProjectItem';
 import Skill from './Skill/Skill';
@@ -15,7 +15,7 @@ export {
   Header,
   Image,
   About,
-  TextTemplate,
+  AboutText,
   Projects,
   ProjectItem,
   Skill,

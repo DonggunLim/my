@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Image, TextTemplate } from '../index';
+import { Image, AboutText } from '../index';
 import aboutImgae from '../../assets/image/myimage.jpg';
 import useWindowSize from '../../hooks/useWindowsSize';
 const About = React.forwardRef((_props, ref) => {
@@ -22,7 +22,7 @@ const About = React.forwardRef((_props, ref) => {
           url={aboutImgae}
         />
       </div>
-      <TextTemplate />
+      <AboutText />
     </AboutContainer>
   );
 });
