@@ -9,6 +9,7 @@ import Footer from './Footer/Footer';
 import Intro from './Intro/Intro';
 import Email from './Email/Email';
 import Spinner from './Spinner/Spinner';
+import Carousel from './Carousel/Carousel';
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   Intro,
   Email,
   Spinner,
+  Carousel,
 };

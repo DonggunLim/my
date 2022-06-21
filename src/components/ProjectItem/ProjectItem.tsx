@@ -1,17 +1,10 @@
 import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Image } from '../index';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/fonts/font.css';
-import {
-  FaArrowRight,
-  FaArrowLeft,
-  FaGithub,
-  FaPlayCircle,
-} from 'react-icons/fa';
+import { FaGithub, FaPlayCircle } from 'react-icons/fa';
 import { AiOutlineRead } from 'react-icons/ai';
+import { Carousel } from '../index';
 interface ProjectItemProps {
   title: string;
   explain: string;
@@ -40,32 +33,20 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
     readmeUrl,
   } = data;
 
-  const settings = {
-    infinite: true,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <ProjectItemNextArrow themeContext={themeContext} />,
-    prevArrow: <ProjectItemPrevArrow themeContext={themeContext} />,
-    draggable: true,
-  };
-
   return (
     <ItemContainer className='item_container' themeContext={themeContext}>
-      <SilderContainer className='item_silder_container'>
-        <StyledImageSlider {...settings}>
-          {imageUrl.map((image: string, index) => (
-            <Image
-              isCircle=''
-              width='100%'
-              height='600px'
-              url={image}
-              bgColor='#dfdfdf'
-              key={index}
-            />
-          ))}
-        </StyledImageSlider>
-      </SilderContainer>
+      <Carousel themeContext={themeContext}>
+        {imageUrl.map((image: string, index) => (
+          <Image
+            isCircle=''
+            width='100%'
+            height='600px'
+            url={image}
+            bgColor='#dfdfdf'
+            key={index}
+          />
+        ))}
+      </Carousel>
       <TextContainer className='item_text_container'>
         <h1 className='textcontainer_title'>{title}</h1>
         <p className='textcontainer_explain'>{explain}</p>
@@ -125,57 +106,6 @@ const ProjectItem = ({ data }: { data: ProjectItemProps }) => {
 
 export default ProjectItem;
 
-function ProjectItemNextArrow(props: any) {
-  const { className, style, onClick, themeContext } = props;
-  return (
-    <>
-      <FaArrowRight
-        className={className}
-        style={{
-          color: themeContext.color,
-          width: '32px',
-          height: '32px',
-          zIndex: 10,
-          position: 'absolute',
-          top: '105%',
-          right: '25%',
-          ...style,
-        }}
-        onClick={e => {
-          e.stopPropagation();
-          onClick();
-        }}
-      />
-      <div className='item_silder_container_index'>
-        {props.currentSlide + 1}/{props.slideCount}
-      </div>
-    </>
-  );
-}
-
-function ProjectItemPrevArrow(props: any) {
-  const { className, style, onClick, themeContext } = props;
-  return (
-    <FaArrowLeft
-      className={className}
-      style={{
-        color: themeContext.color,
-        width: '32px',
-        height: '32px',
-        zIndex: 10,
-        position: 'absolute',
-        top: '105%',
-        left: '25%',
-        ...style,
-      }}
-      onClick={e => {
-        e.stopPropagation();
-        onClick();
-      }}
-    />
-  );
-}
-
 const ItemContainer = styled.div<{
   themeContext: { color: string; bgColor: string };
 }>`
@@ -191,22 +121,6 @@ const ItemContainer = styled.div<{
 
   @media (max-width: 1130px) {
     flex-direction: column;
-  }
-`;
-
-const SilderContainer = styled.div`
-  width: 40%;
-  padding: 16px;
-
-  .item_silder_container_index {
-    font-size: 1.4rem;
-    font-weight: 900;
-    text-align: center;
-    margin-top: 16px;
-  }
-
-  @media (max-width: 1130px) {
-    width: 100%;
   }
 `;
 
@@ -287,9 +201,4 @@ const TextContainer = styled.div`
       font-size: 2rem;
     }
   }
-`;
-
-const StyledImageSlider = styled(Slider)`
-  width: 100%;
-  height: 600px;
 `;
