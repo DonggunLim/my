@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FaRegMoon, FaGithub } from 'react-icons/fa';
 import { BsSun } from 'react-icons/bs';
 import { AiOutlineMail } from 'react-icons/ai';
+import autoScroll from '../../shared/autoScroll';
 
 interface HeaderProps {
   scrollRef: React.MutableRefObject<object | null>;
@@ -17,45 +18,22 @@ const Header = ({
   isDarkmode,
   handleVisible,
 }: HeaderProps) => {
-  const autoScroll = (e: React.MouseEvent) => {
-    const clickElementName: 'About' | 'Skill' | 'Project' | string = (
-      e.target! as HTMLElement
-    ).innerText;
+  const handleClick = (e: React.MouseEvent) => {
+    const targetName = (e.target! as HTMLElement).innerText;
     const elementList = scrollRef.current as Array<HTMLElement>;
-    let target: number | null = null;
-    switch (clickElementName) {
-      case `Donggun's Portfolio`:
-        target = 0;
-        break;
-      case 'About':
-        target = 1;
-        break;
-      case 'Skill':
-        target = 2;
-        break;
-      case 'Project':
-        target = 3;
-        break;
-      default:
-        throw new Error(`${clickElementName} is not case`);
-    }
-    elementList[target].scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
+    autoScroll(targetName, elementList);
   };
 
-  const goGithub = () => {
-    window.open('https://github.com/Ldonggun', '_blank');
-  };
+  const goGithub = () => window.open('https://github.com/Ldonggun', '_blank');
+
   return (
     <HeaderContainer className='header'>
       <Navigation>
         <NavItemContainer>
-          <NavItem onClick={autoScroll}>Donggun's Portfolio</NavItem>
-          <NavItem onClick={autoScroll}>About</NavItem>
-          <NavItem onClick={autoScroll}>Skill</NavItem>
-          <NavItem onClick={autoScroll}>Project</NavItem>
+          <NavItem onClick={handleClick}>Donggun's Portfolio</NavItem>
+          <NavItem onClick={handleClick}>About</NavItem>
+          <NavItem onClick={handleClick}>Skill</NavItem>
+          <NavItem onClick={handleClick}>Project</NavItem>
         </NavItemContainer>
         <NavItemContainer
           width='20%'
