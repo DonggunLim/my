@@ -107,7 +107,7 @@ const Projects = React.forwardRef((_props, ref) => {
         (ref! as React.MutableRefObject<Array<HTMLElement>>).current[3] = node!;
       }}
       data-aos='fade-right'
-      data-aos-offset='500'
+      data-aos-offset='300'
     >
       <h1 className='projects_title'>Project</h1>
       {data.map(data => (

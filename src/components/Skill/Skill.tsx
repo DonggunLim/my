@@ -13,8 +13,8 @@ const Skill = React.forwardRef((_props, ref) => {
       ref={node => {
         (ref! as React.MutableRefObject<Array<HTMLElement>>).current[2] = node!;
       }}
-      data-aos='fade-left'
-      data-aos-offset='400'
+      data-aos='fade-right'
+      data-aos-offset='300'
     >
       <h1 className='skill_title'>Skill</h1>
       <SkillBody className='skill_body'>
