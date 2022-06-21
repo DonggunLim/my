@@ -10,7 +10,7 @@ import Intro from './Intro/Intro';
 import Email from './Email/Email';
 import Spinner from './Spinner/Spinner';
 import Carousel from './Carousel/Carousel';
-
+import ProjectItemText from './ProjectItemText/ProjectItemText';
 export {
   Header,
   Image,
@@ -24,4 +24,5 @@ export {
   Email,
   Spinner,
   Carousel,
+  ProjectItemText,
 };

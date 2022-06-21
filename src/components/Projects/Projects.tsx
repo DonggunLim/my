@@ -25,6 +25,19 @@ import {
   portfolio4,
 } from '../../assets/image/portfolio';
 
+export interface ProjectDataProps {
+  title: string;
+  explain: string;
+  tech: string;
+  service: string;
+  deployment: string;
+  url: string | boolean;
+  youtubeUrl: string;
+  githubUrl: string;
+  imageUrl: string[];
+  readmeUrl: string;
+}
+
 const Projects = React.forwardRef((_props, ref) => {
   const data = [
     {
@@ -61,7 +74,7 @@ const Projects = React.forwardRef((_props, ref) => {
       tech: 'React.js, redux, redux-actions, redux-thunk, redux-logger, immer, react-router-dom, styled-components, axios, JWT',
       service: 'JWT를 이용한 회원가입, 게시물 CRUD 및 유저 페이지',
       deployment: 'aws-s3',
-      url: 'false',
+      url: false,
       youtubeUrl: '',
       githubUrl: 'https://github.com/Ldonggun/velog-clone',
       imageUrl: [login, signup],
@@ -76,7 +89,7 @@ const Projects = React.forwardRef((_props, ref) => {
       tech: 'React.js, redux, styled-components, axios',
       service: ' 게시물CRUD, s3 이용한 이미지저장',
       deployment: 'aws-s3',
-      url: 'false',
+      url: false,
       youtubeUrl: '',
       githubUrl: 'https://github.com/Ldonggun/lost99-frontend',
       imageUrl: [detail, post],
