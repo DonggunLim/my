@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Image, TextTemplate } from '../index';
 import aboutImgae from '../../assets/image/myimage.jpg';
-
+import useWindowSize from '../../hooks/useWindowsSize';
 const About = React.forwardRef((_props, ref) => {
-  const [windowSize, setWindowSize] = useState<number | null>(null);
-  useEffect(() => {
-    setWindowSize(window.screen.width);
-  }, []);
+  const widthSize = useWindowSize();
   return (
     <AboutContainer
       className='about'
@@ -20,8 +17,8 @@ const About = React.forwardRef((_props, ref) => {
       <div className='profile-image'>
         <Image
           isCircle='true'
-          width={windowSize! < 1130 ? '150px' : '290px'}
-          height={windowSize! < 1130 ? '150px' : '290px'}
+          width={widthSize < 1130 ? '150px' : '290px'}
+          height={widthSize < 1130 ? '150px' : '290px'}
           url={aboutImgae}
         />
       </div>

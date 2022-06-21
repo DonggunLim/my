@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Image from '../Image/Image';
 import group1 from '../../assets/image/Group1.png';
 import group2 from '../../assets/image/Group2.png';
 import group3 from '../../assets/image/Group3.png';
-
+import useWindowSize from '../../hooks/useWindowsSize';
 const Skill = React.forwardRef((_props, ref) => {
-  const [windowSize, setWindowSize] = useState<number | null>(null);
-  useEffect(() => {
-    setWindowSize(window.screen.width);
-  }, []);
+  const widthSize = useWindowSize();
   return (
     <SkillContainer
       className='skill'
@@ -24,8 +21,8 @@ const Skill = React.forwardRef((_props, ref) => {
         <Image
           url={group1}
           isCircle='16px'
-          width={windowSize! < 1130 ? '350px' : '360px'}
-          height={windowSize! < 1130 ? '400px' : '600px'}
+          width={widthSize < 1130 ? '350px' : '360px'}
+          height={widthSize < 1130 ? '400px' : '600px'}
           bgSize='cover'
           hover={true}
         />
