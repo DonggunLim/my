@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { Spinner } from '../index';
 import { IoClose } from 'react-icons/io5';
 import { FaCheck } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 import { Image } from '../index';
 import myImage from '../../assets/image/myimage.jpg';
-
+import sendEmail from '../../shared/sendEmail';
 interface EmailProps {
   emailVisible: boolean;
   handleVisible: () => void;
@@ -18,23 +17,10 @@ const Email = (props: EmailProps) => {
   const [spinnerVisible, setSpinnerVisible] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e: React.FormEvent) => {
+  const handleFormEvent = (e: React.FormEvent) => {
     e.preventDefault();
     setSpinnerVisible(true);
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID! as string,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID! as string,
-        formRef.current! as HTMLFormElement,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
-      ) //
-      .then(_result => {
-        setCheckStatus(prev => !prev);
-        setSpinnerVisible(false);
-      })
-      .catch(error => {
-        throw new Error(`${error}`);
-      });
+    sendEmail(formRef, setCheckStatus, setSpinnerVisible);
   };
 
   return (
@@ -51,7 +37,7 @@ const Email = (props: EmailProps) => {
           onClick={handleVisible}
         />
       </section>
-      <form className='email_form' onSubmit={sendEmail} ref={formRef}>
+      <form className='email_form' onSubmit={handleFormEvent} ref={formRef}>
         <label htmlFor='email'>Email</label>
         <input
           type='email'
@@ -65,7 +51,7 @@ const Email = (props: EmailProps) => {
       </form>
       <CheckButton
         className='form_check'
-        onClick={sendEmail}
+        onClick={handleFormEvent}
         checkStatus={checkStatus}
       >
         <FaCheck size='38px' className='check_image' />
