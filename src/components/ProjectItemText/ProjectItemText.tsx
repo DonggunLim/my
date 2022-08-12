@@ -23,7 +23,7 @@ const ProjectItemText = ({ data, themeContext }: ProjectItemTextProps) => {
     githubUrl,
     readmeUrl,
   } = data;
-  console.log(themeContext);
+
   return (
     <ProjectItemTextContainer>
       <h1 className='title'>{title}</h1>
