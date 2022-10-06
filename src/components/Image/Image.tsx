@@ -33,7 +33,6 @@ const ImageContainer = styled.div<ImageProps>`
   height: ${props => (props.height ? props.height : 'auto')};
   border-radius: ${props =>
     props.isCircle === 'true' ? '50%' : props.isCircle};
-  border: 1px solid #dfdfdf;
   box-shadow: 0 17px 20px -18px rgba(0, 0, 0, 1);
 
   background-image: url(${props => props.url});
