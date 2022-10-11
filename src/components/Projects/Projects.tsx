@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,13 +25,15 @@ import {
   portfolio4,
 } from '../../assets/image/portfolio';
 
+import { calculator } from '../../assets/image/calculator';
+
 export interface ProjectDataProps {
   title: string;
   explain: string;
   tech: string;
   service: string;
   deployment: string;
-  url: string | boolean;
+  url: string;
   youtubeUrl: string;
   githubUrl: string;
   imageUrl: string[];
@@ -39,7 +41,8 @@ export interface ProjectDataProps {
 }
 
 const Projects = React.forwardRef((_props, ref) => {
-  const data = [
+  const [isTeamProject, setIsTeamProject] = useState(true);
+  const teamProjects = [
     {
       id: 1,
       title: 'Fungap',
@@ -74,7 +77,7 @@ const Projects = React.forwardRef((_props, ref) => {
       tech: 'React.js, redux, redux-actions, redux-thunk, redux-logger, immer, react-router-dom, styled-components, axios, JWT',
       service: 'JWT를 이용한 회원가입, 게시물 CRUD 및 유저 페이지',
       deployment: 'aws-s3',
-      url: false,
+      url: '',
       youtubeUrl: '',
       githubUrl: 'https://github.com/Ldonggun/velog-clone',
       imageUrl: [login, signup],
@@ -89,7 +92,7 @@ const Projects = React.forwardRef((_props, ref) => {
       tech: 'React.js, redux, styled-components, axios',
       service: ' 게시물CRUD, s3 이용한 이미지저장',
       deployment: 'aws-s3',
-      url: false,
+      url: '',
       youtubeUrl: '',
       githubUrl: 'https://github.com/Ldonggun/lost99-frontend',
       imageUrl: [detail, post],
@@ -113,6 +116,32 @@ const Projects = React.forwardRef((_props, ref) => {
     },
   ];
 
+  const personalProjects = [
+    {
+      id: 1,
+      title: '계산기',
+      explain:
+        '바닐라 자바스크립트를 이용해서 계산기를 만들어 보았습니다. 간단한 과제로써 계산기를 몇 번 만들어 보았지만, 두 자릿수 이상의 계산과 여러 가지 사칙연산을 우선순위에 맞추어 계산기를 만들어 보고 싶었습니다. 중위식과 후위식 계산을 통한 알고리즘 공부도 하게 되었고 이전에 공부했던 css grid도 또한 간단히 적용해 볼 수 있었습니다. ',
+      tech: 'JavaScript, HTML5, CSS3',
+      service: '',
+      deployment: 'GitHub Pages',
+      url: 'https://ldonggun.github.io/Calculator/',
+      youtubeUrl: '',
+      githubUrl: 'https://github.com/Ldonggun/Calculator',
+      imageUrl: [calculator],
+      readmeUrl: '',
+    },
+  ];
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const target = e.target! as HTMLButtonElement;
+    if (target.className === 'team_btn') {
+      setIsTeamProject(true);
+    } else {
+      setIsTeamProject(false);
+    }
+  };
+
   return (
     <ProjectsContainer
       className='projects'
@@ -123,9 +152,21 @@ const Projects = React.forwardRef((_props, ref) => {
       data-aos-offset='300'
     >
       <h1 className='projects_title'>Project</h1>
-      {data.map(data => (
-        <ProjectItem data={data} key={data.id} />
-      ))}
+      <div className='project_menu'>
+        <button className='team_btn' onClick={handleClick}>
+          팀 프로젝트
+        </button>
+        <button className='personal_btn' onClick={handleClick}>
+          개인 프로젝트
+        </button>
+      </div>
+      {isTeamProject
+        ? teamProjects.map(project => (
+            <ProjectItem data={project} key={project.id} />
+          ))
+        : personalProjects.map(project => (
+            <ProjectItem data={project} key={project.id} />
+          ))}
     </ProjectsContainer>
   );
 });
@@ -141,6 +182,30 @@ const ProjectsContainer = styled.section`
   .projects_title {
     font-size: 5rem;
     font-family: 'BlackHanSans-Regular';
+  }
+
+  .project_menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 40px;
+
+    button {
+      width: 45%;
+      text-align: center;
+      background: white;
+      height: 100%;
+      cursor: pointer;
+      border-radius: 16px;
+      box-shadow: 0 17px 20px -18px rgb(0 0 0);
+      border: 1px solid #e0e0e0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .selected {
+      background: #e7e7e7;
+    }
   }
 
   @media (max-width: 1130px) {

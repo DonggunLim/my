@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 //icons
-import { FaGithub, FaPlayCircle } from 'react-icons/fa';
+import { FaGithub, FaPlayCircle, FaLink } from 'react-icons/fa';
 import { AiOutlineRead } from 'react-icons/ai';
 import '../../styles/fonts/font.css';
 import { DefaultTheme } from 'styled-components';
@@ -33,28 +33,34 @@ const ProjectItemText = ({ data, themeContext }: ProjectItemTextProps) => {
           <div className='text_body_title'>Skill</div>
           <div className='text_body_content'>{tech}</div>
         </div>
-        <div className='text_body_item'>
-          <div className='text_body_title'>I Did</div>
-          <div className='text_body_content'>{service}</div>
-        </div>
-        <div className='text_body_item'>
-          <div className='text_body_title'>URL</div>
-          <div className='text_body_content'>{url ? url : '❌'}</div>
-        </div>
+        {service && (
+          <div className='text_body_item'>
+            <div className='text_body_title'>I Did</div>
+            <div className='text_body_content'>{service}</div>
+          </div>
+        )}
         <div className='text_body_item'>
           <div className='text_body_title'>Deployment</div>
           <div className='text_body_content'>{deployment}</div>
         </div>
       </ItemBody>
       <IconContainer themeContext={themeContext}>
-        <a
-          href={youtubeUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='icon_video'
-        >
-          <FaPlayCircle size={35} />
-        </a>
+        {youtubeUrl && (
+          <a
+            href={youtubeUrl}
+            target='_blank'
+            rel='noreferrer'
+            className='icon_video'
+          >
+            <FaPlayCircle size={35} />
+          </a>
+        )}
+        {url && (
+          <a href={url} target='_blank' rel='noreferrer' className='icon_url'>
+            <FaLink size={33} />
+          </a>
+        )}
+
         <a
           href={githubUrl}
           target='_blank'
@@ -133,7 +139,7 @@ const ItemBody = styled.div`
 `;
 
 const IconContainer = styled.div<{ themeContext: DefaultTheme }>`
-  width: 200px;
+  width: 40%;
   display: flex;
   justify-content: space-between;
   align-items: center;
