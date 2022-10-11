@@ -35,7 +35,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d https://ldonggun.github.io/my/"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +58,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-slick": "^0.23.8"
+    "@types/react-slick": "^0.23.8",
+    "gh-pages": "^4.0.0"
   }
 }
