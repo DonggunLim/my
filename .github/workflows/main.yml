@@ -3,8 +3,7 @@ on: [push, pull_request]
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      ENV: ${{secrets.REACT_APP_API_END_POINT}}
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@master
@@ -16,6 +15,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Setting .env
+        run: echo "REACT_APP_API_END_POINT=$REACT_APP_API_END_POINT" >> .env
+        env:
+          REACT_APP_API_END_POINT: ${{ secrets.REACT_APP_API_END_POINT }}
 
       - name: Build
         run: npm run build
