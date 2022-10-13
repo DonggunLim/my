@@ -3,6 +3,8 @@ on: [push, pull_request]
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      ENV: ${{secrets.REACT_APP_API_END_POINT}}
     steps:
       - name: Checkout source code
         uses: actions/checkout@master
