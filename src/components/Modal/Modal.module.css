@@ -1,0 +1,32 @@
+.modal_outer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.138);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_inner {
+  width: 700px;
+  height: 800px;
+  padding: 1rem;
+  background-color: var(--color-bg);
+  border-radius: 8px;
+  overflow: hidden;
+
+  animation: fadein 0.8s ease-in-out;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

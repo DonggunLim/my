@@ -12,6 +12,7 @@ import Spinner from './Spinner/Spinner';
 import Carousel from './Carousel/Carousel';
 import ProjectItemText from './ProjectItemText/ProjectItemText';
 import Avatar from './Avatar/Avatar';
+import Modal from './Modal/Modal';
 export {
   Header,
   Image,
@@ -27,4 +28,5 @@ export {
   Carousel,
   ProjectItemText,
   Avatar,
+  Modal,
 };
