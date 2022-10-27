@@ -12,15 +12,9 @@ interface HeaderProps {
   scrollRef: React.MutableRefObject<object | null>;
   toggleMode: () => void;
   isDarkmode: boolean;
-  handleVisible: () => void;
 }
 
-const Header = ({
-  scrollRef,
-  toggleMode,
-  isDarkmode,
-  handleVisible,
-}: HeaderProps) => {
+const Header = ({ scrollRef, toggleMode, isDarkmode }: HeaderProps) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleClick = (e: React.MouseEvent) => {
     const targetName = (e.target! as HTMLElement).innerText;
@@ -36,16 +30,19 @@ const Header = ({
     <HeaderContainer className='header' isOpen={toggleMenu}>
       <Navigation>
         <NavItemContainer flexDir='column' height='50%'>
-          <Image isCircle='true' width='200px' height='200px' url={myImage} />
+          <Image
+            isCircle='true'
+            width='250px'
+            height='250px'
+            url={myImage}
+            bgSize='cover'
+          />
           <NavItem onClick={handleClick}>Donggun's Portfolio</NavItem>
           <NavItem onClick={handleClick}>About</NavItem>
           <NavItem onClick={handleClick}>Skill</NavItem>
           <NavItem onClick={handleClick}>Project</NavItem>
         </NavItemContainer>
         <NavItemContainer justifyCt='center' className='navitem_icons'>
-          <NavItem>
-            <AiOutlineMail size='41' onClick={handleVisible} />
-          </NavItem>
           <NavItem>
             <FaGithub size='37' onClick={goGithub} />
           </NavItem>

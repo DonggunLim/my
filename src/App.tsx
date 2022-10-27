@@ -17,7 +17,7 @@ import { darkTheme, lightTheme } from './styles/theme';
 function App() {
   const scrollRef = useRef<HTMLElement[] | null>([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [emailVisible, setEmailVisible] = useState(false);
+
   const toggleMode = () => {
     setIsDarkMode(prev => {
       isDarkMode
@@ -26,8 +26,6 @@ function App() {
       return !prev;
     });
   };
-
-  const handleVisible = () => setEmailVisible(!emailVisible);
 
   useEffect(() => {
     AOS.init({
@@ -50,17 +48,15 @@ function App() {
             scrollRef={scrollRef}
             toggleMode={toggleMode}
             isDarkmode={isDarkMode}
-            handleVisible={handleVisible}
           />
           <Main>
-            <Intro ref={scrollRef} />
+            {/* <Intro ref={scrollRef} /> */}
             <About ref={scrollRef} />
             <Skill ref={scrollRef} />
             <Projects ref={scrollRef} />
           </Main>
-          <Footer handleVisible={handleVisible} />
+          <Footer />
         </Wrap>
-        <Email emailVisible={emailVisible} handleVisible={handleVisible} />
       </ThemeProvider>
     </>
   );
