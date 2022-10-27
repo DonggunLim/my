@@ -11,6 +11,7 @@ import Email from './Email/Email';
 import Spinner from './Spinner/Spinner';
 import Carousel from './Carousel/Carousel';
 import ProjectItemText from './ProjectItemText/ProjectItemText';
+import Avatar from './Avatar/Avatar';
 export {
   Header,
   Image,
@@ -25,4 +26,5 @@ export {
   Spinner,
   Carousel,
   ProjectItemText,
+  Avatar,
 };

@@ -1,44 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Image, AboutText } from '../index';
-import aboutImgae from '../../assets/image/myimage.jpg';
-import useWindowSize from '../../hooks/useWindowsSize';
+import styles from './About.module.css';
+
+//components
+import { AboutText, Avatar } from '../index';
+
 const About = React.forwardRef((_props, ref) => {
-  const widthSize = useWindowSize();
   return (
-    <AboutContainer
-      className='about'
+    <section
+      className={styles.about}
       ref={node => {
         (ref! as React.MutableRefObject<Array<HTMLElement>>).current[1] = node!;
       }}
       data-aos='fade-right'
-      data-aos-offset='300'
+      data-aos-offset='0'
     >
-      <div className='profile-image'>
-        <Image
-          isCircle='true'
-          width={widthSize < 1130 ? '150px' : '290px'}
-          height={widthSize < 1130 ? '150px' : '290px'}
-          url={aboutImgae}
-        />
+      <div className={styles.top}>
+        <Avatar />
+        <AboutText />
       </div>
-      <AboutText />
-    </AboutContainer>
+      <button className={styles.about_btn}>More info</button>
+    </section>
   );
 });
 
 export default About;
-
-const AboutContainer = styled.section`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @media (max-width: 1130px) {
-    .profile-image {
-      margin: auto;
-    }
-  }
-`;
