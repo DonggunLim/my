@@ -31,9 +31,10 @@ export default About;
 
 const AboutContainer = styled.section`
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+  justify-content: center;
 
   @media (max-width: 1130px) {
     .profile-image {

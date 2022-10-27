@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Image } from '../index';
 import { FaRegMoon, FaGithub } from 'react-icons/fa';
 import { BsSun } from 'react-icons/bs';
-import { AiOutlineMail } from 'react-icons/ai';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 
 import autoScroll from '../../shared/autoScroll';

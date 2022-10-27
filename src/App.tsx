@@ -8,7 +8,6 @@ import {
   Skill,
   Footer,
   Intro,
-  Email,
 } from './components/index';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -50,7 +49,7 @@ function App() {
             isDarkmode={isDarkMode}
           />
           <Main>
-            {/* <Intro ref={scrollRef} /> */}
+            <Intro ref={scrollRef} />
             <About ref={scrollRef} />
             <Skill ref={scrollRef} />
             <Projects ref={scrollRef} />

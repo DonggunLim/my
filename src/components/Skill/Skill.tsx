@@ -51,10 +51,10 @@ export default Skill;
 
 const SkillContainer = styled.section`
   width: 100%;
-  padding-top: 100px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  justify-content: center;
 
   .skill_title {
     font-size: 5rem;
