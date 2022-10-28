@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import GlobalStyle from './styles/GlobalStyle';
 import styled, { ThemeProvider } from 'styled-components';
 import {
@@ -9,29 +9,14 @@ import {
   Footer,
   Intro,
 } from './components/index';
-import AOS from 'aos';
+
 import 'aos/dist/aos.css';
 import { darkTheme, lightTheme } from './styles/theme';
 
+const filters = ['About', 'Project', 'Contact'];
 function App() {
-  const scrollRef = useRef<HTMLElement[] | null>([]);
+  const [filter, setFilter] = useState(filters[0]);
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleMode = () => {
-    setIsDarkMode(prev => {
-      isDarkMode
-        ? localStorage.setItem('Theme', 'Light')
-        : localStorage.setItem('Theme', 'Dark');
-      return !prev;
-    });
-  };
-
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-    AOS.refresh();
-  }, []);
 
   useEffect(() => {
     const mode = localStorage.getItem('Theme');
@@ -43,18 +28,12 @@ function App() {
       <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyle />
         <Wrap className='wrapper'>
-          <Header
-            scrollRef={scrollRef}
-            toggleMode={toggleMode}
-            isDarkmode={isDarkMode}
-          />
+          <Header filters={filters} filter={filter} setFilter={setFilter} />
           <Main>
-            {/* <Intro ref={scrollRef} /> */}
-            <About ref={scrollRef} />
-            {/* <Skill ref={scrollRef} />
-            <Projects ref={scrollRef} /> */}
+            {filter === 'About' && <About />}
+            {filter === 'Project' && <Projects />}
+            {filter === 'Contact' && <About />}
           </Main>
-          {/* <Footer /> */}
         </Wrap>
       </ThemeProvider>
     </>

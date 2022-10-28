@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  display: flex;
+  justify-content: end;
+
+  padding-top: 20px;
+  padding-right: 40px;
+}
+
+.list {
+  display: flex;
+}
+
+.list_item {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0rem 0.8rem;
+  color: var(--color-font);
+  transition: 200ms ease-in-out;
+  text-transform: uppercase;
+}
+
+.list_item:hover {
+  transform: scale(1.1);
+}
+
+.selected {
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-accent);
+}
