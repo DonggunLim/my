@@ -49,12 +49,12 @@ function App() {
             isDarkmode={isDarkMode}
           />
           <Main>
-            <Intro ref={scrollRef} />
+            {/* <Intro ref={scrollRef} /> */}
             <About ref={scrollRef} />
-            <Skill ref={scrollRef} />
-            <Projects ref={scrollRef} />
+            {/* <Skill ref={scrollRef} />
+            <Projects ref={scrollRef} /> */}
           </Main>
-          <Footer />
+          {/* <Footer /> */}
         </Wrap>
       </ThemeProvider>
     </>
@@ -67,7 +67,6 @@ const Main = styled.main`
   width: 1130px;
   margin: auto;
   position: relative;
-  padding-bottom: 160px;
 
   @media (max-width: 1130px) {
     width: 100%;

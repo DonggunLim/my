@@ -1,7 +1,11 @@
 :root {
+  --color-bg: #fdfffd;
   --color-font: #2f4f4f;
   --color-gray: #d1d1d1;
   --color-accent: #354259;
+  --color-darkBlue: #073d5d;
+  --color-red: #cc473d;
+  --color-scrollbar: #aaa7a7;
 }
 
 body {
@@ -16,4 +20,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
 }

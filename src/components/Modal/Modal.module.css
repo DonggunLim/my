@@ -12,7 +12,6 @@
 .modal_inner {
   width: 700px;
   height: 800px;
-  padding: 1rem;
   background-color: var(--color-bg);
   border-radius: 8px;
   overflow: hidden;

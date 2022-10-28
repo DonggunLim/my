@@ -13,6 +13,7 @@ import Carousel from './Carousel/Carousel';
 import ProjectItemText from './ProjectItemText/ProjectItemText';
 import Avatar from './Avatar/Avatar';
 import Modal from './Modal/Modal';
+import AboutMore from './AboutMore/AboutMore';
 export {
   Header,
   Image,
@@ -29,4 +30,5 @@ export {
   ProjectItemText,
   Avatar,
   Modal,
+  AboutMore,
 };

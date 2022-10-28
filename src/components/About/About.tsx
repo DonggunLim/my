@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './About.module.css';
 
 //components
-import { AboutText, Avatar } from '../index';
+import { AboutText, Avatar, Modal, AboutMore } from '../index';
 
-const About = React.forwardRef((_props, ref) => {
+const About = React.forwardRef(() => {
+  const [toggle, setToggle] = useState(false);
+  const handleToggle = () => setToggle(!toggle);
   return (
-    <section
-      className={styles.about}
-      ref={node => {
-        (ref! as React.MutableRefObject<Array<HTMLElement>>).current[1] = node!;
-      }}
-      data-aos='fade-right'
-      data-aos-offset='0'
-    >
+    <section className={styles.about}>
       <div className={styles.top}>
         <Avatar />
         <AboutText />
       </div>
-      <button className={styles.about_btn}>More info</button>
+      <button className={styles.about_btn} onClick={handleToggle}>
+        More info
+      </button>
+      {toggle && (
+        <Modal onClose={handleToggle} width='700px'>
+          <AboutMore />
+        </Modal>
+      )}
     </section>
   );
 });

@@ -21,6 +21,7 @@ const TextTemplate = () => {
             className={`${styles.converted} ${
               index === textCount ? styles.active : styles.hide
             }`}
+            key={index}
           >
             {text}
           </span>

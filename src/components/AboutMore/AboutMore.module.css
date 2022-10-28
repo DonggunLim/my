@@ -1,0 +1,149 @@
+.about_more {
+  background-color: var(--color-bg);
+  display: flex;
+  padding: 2rem;
+
+  font-size: 1rem;
+
+  position: relative;
+}
+
+.left {
+  width: 35%;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding-right: 8px;
+}
+
+.right {
+  width: 65%;
+  height: 736px;
+  padding-left: 8px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-left: 3px solid var(--color-accent);
+  padding: 16px;
+}
+
+.about_me > p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 2;
+}
+
+.list {
+  margin-top: 1rem;
+}
+
+.list_item {
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  border-bottom: 1px dotted var(--color-accent);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.8rem;
+}
+
+.list_item > a > span,
+.list_item > span {
+  padding-left: 0.3rem;
+}
+
+.list_item:hover {
+  color: var(--color-red);
+}
+
+.list_item:nth-child(5),
+.list_item:nth-child(6) {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.skill_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.skill_list > ul {
+  list-style: disc;
+}
+
+.education_list {
+  position: relative;
+}
+
+.education_list::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 90%;
+  top: 3px;
+  left: 6px;
+  background-color: var(--color-accent);
+}
+
+.education_list > li {
+  width: 100%;
+  position: relative;
+}
+
+.education_list > li::before {
+  content: ' ';
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background-color: var(--color-accent);
+  border-radius: 100%;
+  border: solid 1px var(--color-accent);
+  left: 0px;
+  top: 14px;
+}
+
+.list_inner {
+  width: 100%;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.time {
+  width: 50%;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.time > span {
+  background-color: var(--color-gray);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 0.2rem 0.6rem;
+}
+
+.todo {
+  width: 50%;
+  padding-top: 10px;
+}
+
+.todo > h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.todo > span {
+  font-size: 14px;
+  color: var(--color-gray);
+}
+
+.certificate_list > ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.certificate_list > ul > li {
+  padding-left: 45px;
+}
