@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.module.css';
 
-interface HeaderProps {
+export interface HeaderProps {
   filters: string[];
   filter: string;
   setFilter: React.Dispatch<React.SetStateAction<string>>;

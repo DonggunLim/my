@@ -1,0 +1,25 @@
+.project {
+  width: 100%;
+  padding-top: 100px;
+  height: 100vh;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-font);
+  padding: 0px 6px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn.selected {
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.wrap {
+  padding-top: 150px;
+}

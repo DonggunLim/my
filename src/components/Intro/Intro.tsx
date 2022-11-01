@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+// import styles from './Intro.module.css';
 import styled, { css } from 'styled-components';
-import { BsChevronDoubleDown } from 'react-icons/bs';
+// import { BsChevronDoubleDown } from 'react-icons/bs';
 
 const Intro = React.forwardRef((_props, ref) => {
   const [textCount, setTextCount] = useState(0);
@@ -23,7 +24,7 @@ const Intro = React.forwardRef((_props, ref) => {
 
   return (
     <>
-      <IntroContainer
+      <section
         className='intro'
         ref={node => {
           (ref! as React.MutableRefObject<Array<HTMLElement>>).current[0] =
@@ -44,10 +45,10 @@ const Intro = React.forwardRef((_props, ref) => {
           </div>
           <h3> 프론트 엔드 개발자 임동건입니다.</h3>
         </div>
-        <div className='arrow_image_container'>
+        {/* <div className='arrow_image_container'>
           <BsChevronDoubleDown size={40} className='arrow_image' />
-        </div>
-      </IntroContainer>
+        </div> */}
+      </section>
     </>
   );
 });

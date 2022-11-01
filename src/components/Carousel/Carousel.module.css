@@ -1,0 +1,145 @@
+.carousel_container {
+  position: relative;
+  width: 500px;
+  height: 450px;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.carousel {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: translateZ(calc(var(--z) * -1px));
+  transform-style: preserve-3d;
+  transition: 500ms ease-in-out;
+}
+
+.item {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  padding: 10px;
+  border-radius: 1.1rem;
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  border: 1px solid var(--color-gray);
+}
+
+.item_content_inner {
+  transform-style: preserve-3d;
+  transform: translateY(20rem);
+  text-shadow: 0 1px 2px rgba(84, 84, 84, 0.6);
+  color: var(--color-gray);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.2ch;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.desc {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.2ch;
+}
+
+.carousel_btns {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.next,
+.prev {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 2rem;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.prev:hover {
+  transform: scale(1.2);
+}
+
+.next:hover {
+  transform: scale(1.2);
+}
+
+.Modal_inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.Modal_inner_img > img {
+  margin: auto;
+  width: 400px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.Moddal_inner_bottom {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 4rem;
+  padding-left: 1rem;
+  border-left: 5px solid var(--color-accent);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.bottom_title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.bottom_explain {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.icons {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icons > a:hover {
+  transform: scale(1.1);
+}
+
+.list > li {
+  margin-bottom: 3px;
+}
+
+.list > li > span {
+  background-color: var(--color-gray);
+  margin-right: 1rem;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0 6px;
+}
+
+.list > li > span:hover {
+  background-color: var(--color-accent);
+  color: var(--color-font-dark);
+}

@@ -30,8 +30,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	background-color: ${props => props.theme.bgColor};
-  color: ${props => props.theme.color};
 }
 
 ol, ul {
@@ -51,7 +49,6 @@ table {
 }
 
 a {
-	color: ${props => props.theme.color};
 	text-decoration: none; 
 }
 

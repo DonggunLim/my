@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './Modal.module.css';
 
 interface ModalProps {
@@ -13,6 +13,7 @@ const Modal = ({ children, onClose, width }: ModalProps) => {
       onClose();
     }
   };
+
   return (
     <section className={styles.modal_outer} onClick={handleClick}>
       <div className={styles.modal_inner} style={{ width }}>
