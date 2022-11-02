@@ -1,0 +1,10 @@
+.wrap {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-bg);
+}
+
+.main {
+  width: 1130px;
+  margin: auto;
+}

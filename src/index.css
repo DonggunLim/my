@@ -1,6 +1,19 @@
 :root {
   --color-bg: #fdfffd;
+  --color-bg-dark: #202124;
   --color-font: #303131;
+  --color-font-dark: #fdfffd;
+  --color-gray: #d1d1d1;
+  --color-accent: #354259;
+  --color-darkBlue: #073d5d;
+  --color-red: #cc473d;
+  --color-scrollbar: #aaa7a7;
+}
+
+html.dark {
+  --color-bg: #202124;
+  --color-bg-dark: #fdfffd;
+  --color-font: #fdfffd;
   --color-font-dark: #fdfffd;
   --color-gray: #d1d1d1;
   --color-accent: #354259;

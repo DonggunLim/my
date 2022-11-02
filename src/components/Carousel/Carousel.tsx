@@ -139,6 +139,7 @@ function CarouselModalInnerContent({ data }: CarouselModalInnerContentProps) {
     infinite: true,
     speed: 500,
     autoplay: true,
+    arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
   };

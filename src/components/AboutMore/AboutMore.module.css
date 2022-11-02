@@ -1,5 +1,6 @@
 .about_more {
   background-color: var(--color-bg);
+  color: var(--color-font);
   display: flex;
   padding: 2rem;
 
@@ -51,7 +52,11 @@
 }
 
 .list_item:hover {
-  color: var(--color-red);
+  color: var(--color-accent);
+}
+
+.list_item > a > span:hover {
+  color: var(--color-accent);
 }
 
 .list_item:nth-child(5),
@@ -117,7 +122,8 @@
 }
 
 .time > span {
-  background-color: var(--color-gray);
+  background-color: var(--color-accent);
+  color: var(--color-gray);
   font-size: 14px;
   font-weight: 600;
   border-radius: 16px;

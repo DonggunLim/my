@@ -130,7 +130,8 @@
 }
 
 .list > li > span {
-  background-color: var(--color-gray);
+  background-color: var(--color-accent);
+  color: var(--color-gray);
   margin-right: 1rem;
   margin-top: 10px;
   font-size: 1.1rem;

@@ -13,6 +13,7 @@
 }
 
 .about_btn {
+  color: var(--color-font);
   font-size: 1rem;
   font-weight: bold;
   padding: 8px;
