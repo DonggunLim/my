@@ -11,6 +11,7 @@ import Carousel from './Carousel/Carousel';
 import Avatar from './Avatar/Avatar';
 import Modal from './Modal/Modal';
 import AboutMore from './AboutMore/AboutMore';
+import Setting from './Setting/Setting';
 export {
   Header,
   Image,
@@ -25,4 +26,5 @@ export {
   Avatar,
   Modal,
   AboutMore,
+  Setting,
 };

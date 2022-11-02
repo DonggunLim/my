@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import GlobalStyle from './styles/GlobalStyle';
 import styled from 'styled-components';
-import { Header, About, Projects } from './components/index';
+import { Header, About, Projects, Setting } from './components/index';
 
 const filters = ['About', 'Project', 'Contact'];
 function App() {
@@ -17,6 +17,7 @@ function App() {
           {filter === 'Project' && <Projects />}
           {filter === 'Contact' && <About />}
         </Main>
+        <Setting />
       </Wrap>
     </>
   );

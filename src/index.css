@@ -23,6 +23,11 @@ code {
     monospace;
 }
 
+a {
+  color: var(--color-font);
+  text-decoration: none;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
