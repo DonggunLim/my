@@ -1,0 +1,15 @@
+.colors {
+}
+
+.colors > div {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin-top: 3px;
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.colors > div:hover {
+  transform: scale(1.2);
+}

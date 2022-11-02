@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styles from './Setting.module.css';
 import { BsSunFill, BsMoonFill } from 'react-icons/bs';
+//component
+import { Colors } from '../index';
+//context
+import { DarkModeContext } from '../../context/DarkModeContext';
 
 const Setting = () => {
-  console.log('rerender');
   // const positionRef = React.useRef({ x: 0, y: 0 });
   const mousePointerRef = React.useRef({ x: 0, y: 0 });
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     // 마우스 커서 위치 할당
@@ -45,7 +49,7 @@ const Setting = () => {
 
   return (
     <div
-      className={styles.setting}
+      className={styles.wrap}
       onDragStart={handleDragStart}
       onDrag={handleDrag}
       onDragOver={handleDragOver}
@@ -53,12 +57,12 @@ const Setting = () => {
       onMouseDown={handleMouseDown}
       draggable='true'
     >
-      <span>
-        <BsSunFill size={22} />
-      </span>
-      <span>
-        <BsMoonFill size={22} />
-      </span>
+      <div className={styles.setting}>
+        <span onClick={toggleDarkMode} className={styles.icon}>
+          {darkMode ? <BsSunFill size={25} /> : <BsMoonFill size={25} />}
+        </span>
+        <Colors />
+      </div>
     </div>
   );
 };

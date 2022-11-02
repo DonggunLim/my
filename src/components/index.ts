@@ -12,6 +12,7 @@ import Avatar from './Avatar/Avatar';
 import Modal from './Modal/Modal';
 import AboutMore from './AboutMore/AboutMore';
 import Setting from './Setting/Setting';
+import Colors from './Colors/Colors';
 export {
   Header,
   Image,
@@ -27,4 +28,5 @@ export {
   Modal,
   AboutMore,
   Setting,
+  Colors,
 };

@@ -3,6 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 interface DarkModeContextProps {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  handleAccentColor: (color: string) => void;
 }
 interface DarkModeProviderProps {
   children: React.ReactNode;
@@ -19,29 +20,43 @@ export default function DarkModeProvider({ children }: DarkModeProviderProps) {
     updateDarkMode(!darkMode);
   };
 
+  const handleAccentColor = (color: string) => {
+    updateAccentColor(color);
+  };
+
   useEffect(() => {
     const isDark = localStorage.getItem('theme') === 'dark';
-    console.log(isDark);
     setDarkMode(isDark);
     updateDarkMode(isDark);
+
+    if (localStorage.accentColor) {
+      document.documentElement.style.setProperty(
+        '--color-accent',
+        localStorage.accentColor,
+      );
+    }
   }, []);
 
   return (
-    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <DarkModeContext.Provider
+      value={{ darkMode, toggleDarkMode, handleAccentColor }}
+    >
       {children}
     </DarkModeContext.Provider>
   );
 }
 
 function updateDarkMode(darkMode: boolean) {
-  console.log(darkMode);
   if (darkMode) {
-    console.log(document.documentElement);
     document.documentElement.classList.add('dark');
     localStorage.theme = 'dark';
   } else {
-    console.log(document.documentElement);
     document.documentElement.classList.remove('dark');
     localStorage.theme = 'light';
   }
+}
+
+function updateAccentColor(color: string) {
+  localStorage.accentColor = color;
+  document.documentElement.style.setProperty('--color-accent', color);
 }
