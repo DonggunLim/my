@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styles from './About.module.css';
+"use client";
 
-//components
-import { AboutText, Avatar, Modal, AboutMore } from '../index';
+import React, { useState } from "react";
+import styles from "./About.module.css";
+import { AboutText, Avatar, Modal, AboutMore } from "../index";
 
 const About = React.forwardRef(() => {
   const [toggle, setToggle] = useState(false);
@@ -17,12 +17,12 @@ const About = React.forwardRef(() => {
         More info
       </button>
       {toggle && (
-        <Modal onClose={handleToggle} width='700px'>
+        <Modal onClose={handleToggle} width="700px">
           <AboutMore />
         </Modal>
       )}
     </section>
   );
 });
-
+About.displayName = "About";
 export default About;

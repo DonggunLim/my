@@ -60,3 +60,14 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-accent);
 }
+
+.wrap {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-bg);
+}
+
+.main {
+  width: 1130px;
+  margin: auto;
+}

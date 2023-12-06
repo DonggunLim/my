@@ -1,13 +1,15 @@
-import styles from './AboutText.module.css';
-import { useEffect, useState } from 'react';
+"use client";
+
+import styles from "./AboutText.module.css";
+import { useEffect, useState } from "react";
 
 const TextTemplate = () => {
   const [textCount, setTextCount] = useState(0);
-  const convertedText = ['신입', 'Front-end'];
+  const convertedText = ["신입", "Front-end"];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTextCount(count => (count + 1) % convertedText.length);
+      setTextCount((count) => (count + 1) % convertedText.length);
     }, 4000);
     return () => clearInterval(interval);
   });
