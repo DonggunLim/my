@@ -1,4 +1,6 @@
-import React, { createContext, useState, useEffect } from 'react';
+"use client";
+
+import React, { createContext, useState, useEffect } from "react";
 
 interface DarkModeContextProps {
   darkMode: boolean;
@@ -10,7 +12,7 @@ interface DarkModeProviderProps {
 }
 
 export const DarkModeContext = createContext<DarkModeContextProps>(
-  {} as DarkModeContextProps,
+  {} as DarkModeContextProps
 );
 
 export default function DarkModeProvider({ children }: DarkModeProviderProps) {
@@ -25,14 +27,14 @@ export default function DarkModeProvider({ children }: DarkModeProviderProps) {
   };
 
   useEffect(() => {
-    const isDark = localStorage.getItem('theme') === 'dark';
+    const isDark = localStorage.getItem("theme") === "dark";
     setDarkMode(isDark);
     updateDarkMode(isDark);
 
     if (localStorage.accentColor) {
       document.documentElement.style.setProperty(
-        '--color-accent',
-        localStorage.accentColor,
+        "--color-accent",
+        localStorage.accentColor
       );
     }
   }, []);
@@ -48,15 +50,15 @@ export default function DarkModeProvider({ children }: DarkModeProviderProps) {
 
 function updateDarkMode(darkMode: boolean) {
   if (darkMode) {
-    document.documentElement.classList.add('dark');
-    localStorage.theme = 'dark';
+    document.documentElement.classList.add("dark");
+    localStorage.theme = "dark";
   } else {
-    document.documentElement.classList.remove('dark');
-    localStorage.theme = 'light';
+    document.documentElement.classList.remove("dark");
+    localStorage.theme = "light";
   }
 }
 
 function updateAccentColor(color: string) {
   localStorage.accentColor = color;
-  document.documentElement.style.setProperty('--color-accent', color);
+  document.documentElement.style.setProperty("--color-accent", color);
 }
