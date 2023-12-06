@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'my',
 
   projectId: 'tcqfbhtt',
-  dataset: 'production',
+  dataset: process.env.SANITY_DATASET || 'production',
 
   plugins: [deskTool(), visionTool()],
 

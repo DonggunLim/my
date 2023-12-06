@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import DarkModeProvider from "@/context/DarkModeContext";
 import { Header } from "@/components";
+import SWRConfigContext from "@/context/SWRConfigContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
           <div>
             <Header />
           </div>
-          {children}
+          <SWRConfigContext>
+            <main className="max-w-5xl mx-auto">{children}</main>
+          </SWRConfigContext>
         </body>
       </DarkModeProvider>
     </html>
