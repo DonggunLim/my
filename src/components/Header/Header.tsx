@@ -13,7 +13,7 @@ export interface HeaderProps {
 
 const filters = [
   { item: "about", href: "/about" },
-  { item: "Project", href: "/project" },
+  { item: "Project", href: "/projects" },
   { item: "contact", href: "/contact" },
 ];
 

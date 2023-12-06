@@ -1,14 +1,16 @@
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import React, { useState, useRef } from 'react';
-import styles from './Carousel.module.css';
+"use client";
+
+import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+import React, { useState, useRef } from "react";
+import styles from "./Carousel.module.css";
 //icons
-import { FaArrowRight, FaArrowLeft, FaGithub, FaLink } from 'react-icons/fa';
-import { SiNotion } from 'react-icons/si';
+import { FaArrowRight, FaArrowLeft, FaGithub, FaLink } from "react-icons/fa";
+import { SiNotion } from "react-icons/si";
 //type
-import { ProjectType } from '../Projects/Projects';
-import Modal from '../Modal/Modal';
+import { ProjectType } from "../Projects/Projects";
+import Modal from "../Modal/Modal";
 
 interface CarouselProps {
   data: ProjectType[];
@@ -44,7 +46,7 @@ const Carousel = ({ data }: CarouselProps) => {
 
   const handleClick = (e: React.MouseEvent) => {
     const target = e.currentTarget! as HTMLDivElement;
-    target.className.includes('next')
+    target.className.includes("next")
       ? (selectedIndex.current += 1)
       : (selectedIndex.current -= 1);
     rotateCarousel();
@@ -61,7 +63,7 @@ const Carousel = ({ data }: CarouselProps) => {
         <div
           className={styles.carousel}
           ref={carouselRef}
-          style={{ '--z': zNumber } as React.CSSProperties}
+          style={{ "--z": zNumber } as React.CSSProperties}
         >
           {data.map((data, index) => {
             let deg = index * (360 / itemCount);
@@ -148,9 +150,9 @@ function CarouselModalInnerContent({ data }: CarouselModalInnerContentProps) {
     <div className={styles.Modal_inner}>
       <div className={styles.Moddal_inner_top}>
         <Slider {...settings}>
-          {imageUrl.map(url => (
-            <div className={styles.Modal_inner_img}>
-              <img src={url} alt='project-img' />
+          {imageUrl.map((url, index) => (
+            <div className={styles.Modal_inner_img} key={index}>
+              <img src={url} alt="project-img" />
             </div>
           ))}
         </Slider>
@@ -173,26 +175,26 @@ function CarouselModalInnerContent({ data }: CarouselModalInnerContentProps) {
           <a
             className={styles.list_item}
             href={url}
-            target='_blank'
-            rel='noreferrer'
+            target="_blank"
+            rel="noreferrer"
           >
-            <FaLink size='25' />
+            <FaLink size="25" />
           </a>
           <a
             className={styles.list_item}
             href={githubUrl}
-            target='_blank'
-            rel='noreferrer'
+            target="_blank"
+            rel="noreferrer"
           >
-            <FaGithub size='25' />
+            <FaGithub size="25" />
           </a>
           <a
             className={styles.list_item}
             href={readmeUrl}
-            target='_blank'
-            rel='noreferrer'
+            target="_blank"
+            rel="noreferrer"
           >
-            <SiNotion size='25' />
+            <SiNotion size="25" />
           </a>
         </div>
       </div>
