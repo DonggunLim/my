@@ -13,10 +13,13 @@ export default function ProjectGrid() {
 
   return (
     <div className="w-full">
-      <ul className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 py-8 px-8">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 px-8">
         {projects &&
           projects.map((project) => (
-            <li key={project.id}>
+            <li
+              key={project.id}
+              className="px-4 transition-all duration-500 hover:scale-110"
+            >
               <ProjectGridCard project={project} />
             </li>
           ))}

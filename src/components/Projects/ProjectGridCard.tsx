@@ -16,9 +16,9 @@ type Props = {
 export default function ProjectGridCard({ project }: Props) {
   const [toggle, setToggle] = useState(false);
   return (
-    <div className="relative w-full aspect-square">
+    <div className="relative w-full aspect-square shadow-md">
       <Image
-        className="object-cover"
+        className="object-cover rounded-lg"
         src={project.thumbnail}
         alt="project thumbnail"
         fill
