@@ -24,13 +24,13 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul className={styles.list}>
           {filters.map(({ item, href }, index) => (
-            <li
-              key={index}
-              className={`${styles.list_item} ${
-                pathName === href && styles.selected
-              }`}
-            >
-              <Link href={href}>{item}</Link>
+            <li key={index} className={styles.list_item}>
+              <Link
+                href={href}
+                className={pathName == href ? styles.selected : ""}
+              >
+                {item}
+              </Link>
             </li>
           ))}
         </ul>

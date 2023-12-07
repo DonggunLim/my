@@ -4,7 +4,7 @@ import "./globals.css";
 import DarkModeProvider from "@/context/DarkModeContext";
 import { Header } from "@/components";
 import SWRConfigContext from "@/context/SWRConfigContext";
-
+import styles from "./page.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[color:var(--color-bg)]">
       <DarkModeProvider>
         <body className={inter.className}>
           <div>
