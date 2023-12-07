@@ -21,7 +21,9 @@ export default function ProjectDialog({ children, onClose }: Props) {
       >
         <CloseIcon />
       </button>
-      <div className="bg-white w-4/5 h-3/5 max-w-7xl ">{children}</div>
+      <div className="bg-white w-3/5 h-5/6 max-w-7xl p-8 rounded-md">
+        {children}
+      </div>
     </section>
   );
 }
