@@ -16,7 +16,7 @@ export default function ProjectGrid() {
       <ul className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 py-8 px-8">
         {projects &&
           projects.map((project) => (
-            <li key={project.id} className="cursor-pointer">
+            <li key={project.id}>
               <ProjectGridCard project={project} />
             </li>
           ))}

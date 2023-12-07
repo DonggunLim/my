@@ -7,7 +7,9 @@ export async function getProjects() {
       `*[_type=="project"]{
     ...,
     "id" : _id,
-  }`
+  }`,
+      undefined,
+      { cache: "no-store" }
     )
     .then(mappingImage);
 }

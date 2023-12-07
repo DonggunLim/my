@@ -7,7 +7,7 @@ import Projects from "./Projects/Projects";
 // import Intro from './Intro/Intro';
 // import Email from './Email/Email';
 // import Spinner from './Spinner/Spinner';
-import Carousel from "./Carousel/Carousel";
+// import Carousel from "./Carousel/Carousel";
 import Avatar from "./Avatar/Avatar";
 import Modal from "./Modal/Modal";
 import AboutMore from "./AboutMore/AboutMore";
@@ -23,7 +23,7 @@ export {
   //   Intro,
   //   Email,
   //   Spinner,
-  Carousel,
+  // Carousel,
   Avatar,
   Modal,
   AboutMore,

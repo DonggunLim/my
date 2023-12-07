@@ -27,6 +27,7 @@ export default function RootLayout({
           <SWRConfigContext>
             <main className="max-w-5xl mx-auto">{children}</main>
           </SWRConfigContext>
+          <div id="portal" />
         </body>
       </DarkModeProvider>
     </html>
