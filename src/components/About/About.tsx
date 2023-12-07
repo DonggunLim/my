@@ -8,7 +8,7 @@ const About = React.forwardRef(() => {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => setToggle(!toggle);
   return (
-    <section className={styles.about}>
+    <section className="w-full flex flex-col items-center pt-[30%]">
       <div className={styles.top}>
         <Avatar />
         <AboutText />
