@@ -21,9 +21,6 @@ export default function RootLayout({
     <html lang="en" className="bg-[color:var(--color-bg)]">
       <DarkModeProvider>
         <body className={inter.className}>
-          <div>
-            <Header />
-          </div>
           <SWRConfigContext>
             <main className="max-w-5xl mx-auto">{children}</main>
           </SWRConfigContext>

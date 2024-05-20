@@ -3,10 +3,5 @@
 import { About, Setting } from "@/components";
 
 export default function Home() {
-  return (
-    <>
-      <About />
-      <Setting />
-    </>
-  );
+  return <></>;
 }
