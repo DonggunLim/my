@@ -1,7 +1,7 @@
 "use client";
 
-import { About, Setting } from "@/components";
+import Mainpage from "@/components/MainPage";
 
 export default function Home() {
-  return <></>;
+  return <Mainpage />;
 }
