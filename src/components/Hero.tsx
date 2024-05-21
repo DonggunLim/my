@@ -14,7 +14,7 @@ export default function Hero() {
         <LinkBar />
       </div>
       <div className="flex-1 flex flex-col gap-y-2 leading-6 text-sm font-semibold">
-        <p className="">
+        <p>
           안녕하세요. 프로트엔드 개발자 되기 위해서 공부중인 임동건 입니다.
           개발에 대한 첫 입문은 2022년 3개월간 개발분야에 공부 해볼수있는
           부트캠프에서 프론트엔드 역할이었습니다.

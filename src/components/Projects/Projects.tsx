@@ -1,9 +1,10 @@
-import ProjectGrid from "./ProjectGrid";
+import ProjectList from "./ProjectList";
 
 export default function Projects() {
   return (
-    <section>
-      <ProjectGrid />
+    <section className="flex">
+      <p className="font-black flex-1">PROJECT</p>
+      <ProjectList />
     </section>
   );
 }
